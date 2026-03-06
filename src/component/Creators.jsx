@@ -9,7 +9,7 @@ const CREATORS = [
     name: "The Iced Coffee Hour",
     subs: "1.55M Subscribers",
     img: "/creators/IcedCoffeeHour.AVIF",
-    unoptimized: true, // avif → served as-is
+    unoptimized: true,
   },
   {
     name: "Brandon Buckingham",
@@ -62,14 +62,27 @@ const CREATORS = [
 ];
 
 const PER_VIEW = 3;
-const TOTAL_SLIDES = Math.ceil(CREATORS.length / PER_VIEW); // 3 slides
+const TOTAL_SLIDES = Math.ceil(CREATORS.length / PER_VIEW);
 
-/* ─── Arrow SVG (inline, no external dep) ──────────────────────────────── */
-function Arrow({ direction }) {
+/* ─── Arrow SVG ──────────────────────────────────────────────────────── */
+function Chevron({ direction }) {
   return (
-    <span style={{ fontSize: "20px", lineHeight: 1 }}>
-      {direction === "prev" ? "←" : "→"}
-    </span>
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="black"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {direction === "prev" ? (
+        <polyline points="15 18 9 12 15 6" />
+      ) : (
+        <polyline points="9 18 15 12 9 6" />
+      )}
+    </svg>
   );
 }
 
@@ -82,7 +95,6 @@ export default function Creators() {
     setCurrent(idx);
   }
 
-  // Cards visible for the current slide index
   const start = current * PER_VIEW;
   const visibleCards = CREATORS.slice(start, start + PER_VIEW);
 
@@ -92,173 +104,154 @@ export default function Creators() {
       style={{
         background: "var(--cream)",
         borderTop: "1px solid var(--border)",
-        padding: "88px 0 0",
+        padding: "88px 0 88px",
+        overflow: "hidden",
       }}
     >
       {/* ── Header ─────────────────────────────────────────────────────── */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "flex-end",
-          padding: "0 48px 56px",
-        }}
-      >
-        {/* Left: eyebrow + headline */}
-        <div>
-          <div
-            style={{
-              fontSize: "9px",
-              letterSpacing: ".3em",
-              textTransform: "uppercase",
-              color: "var(--ink-lt)",
-              fontFamily: "var(--sans)",
-              display: "flex",
-              alignItems: "center",
-              gap: "14px",
-              marginBottom: "16px",
-            }}
-          >
-            <span
-              style={{
-                display: "inline-block",
-                width: "24px",
-                height: "1px",
-                background: "var(--red)",
-                flexShrink: 0,
-              }}
-            />
-            Our Network
-          </div>
-
-          <h2
-            style={{
-              fontFamily: "var(--serif)",
-              fontSize: "clamp(44px, 6vw, 80px)",
-              fontWeight: 700,
-              lineHeight: 0.88,
-              letterSpacing: "-0.03em",
-              textTransform: "uppercase",
-              color: "var(--ink)",
-            }}
-          >
-            Meet our
-            <br />
-            <em style={{ fontStyle: "normal", color: "var(--red)" }}>
-              creators
-            </em>
-          </h2>
-        </div>
-
-        {/* Right: prev / counter / next */}
-        <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
-          <button
-            id="creatorPrev"
-            onClick={() => goTo(current - 1)}
-            disabled={current === 0}
-            style={{
-              width: "52px",
-              height: "52px",
-              border: "1.5px solid var(--border)",
-              background: "transparent",
-              cursor: current === 0 ? "default" : "none",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "var(--ink)",
-              transition: "all .25s",
-              flexShrink: 0,
-              opacity: current === 0 ? 0.35 : 1,
-            }}
-            onMouseEnter={(e) => {
-              if (current === 0) return;
-              e.currentTarget.style.background = "var(--red)";
-              e.currentTarget.style.borderColor = "var(--red)";
-              e.currentTarget.style.color = "var(--cream)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "transparent";
-              e.currentTarget.style.borderColor = "var(--border)";
-              e.currentTarget.style.color = "var(--ink)";
-            }}
-          >
-            <Arrow direction="prev" />
-          </button>
-
-          <span
-            id="creatorCounter"
-            style={{
-              fontSize: "11px",
-              letterSpacing: ".1em",
-              color: "var(--ink-lt)",
-              minWidth: "52px",
-              textAlign: "center",
-              fontFamily: "var(--sans)",
-            }}
-          >
-            {current + 1} / {TOTAL_SLIDES}
-          </span>
-
-          <button
-            id="creatorNext"
-            onClick={() => goTo(current + 1)}
-            disabled={current === TOTAL_SLIDES - 1}
-            style={{
-              width: "52px",
-              height: "52px",
-              border: "1.5px solid var(--border)",
-              background: "transparent",
-              cursor: current === TOTAL_SLIDES - 1 ? "default" : "none",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "var(--ink)",
-              transition: "all .25s",
-              flexShrink: 0,
-              opacity: current === TOTAL_SLIDES - 1 ? 0.35 : 1,
-            }}
-            onMouseEnter={(e) => {
-              if (current === TOTAL_SLIDES - 1) return;
-              e.currentTarget.style.background = "var(--red)";
-              e.currentTarget.style.borderColor = "var(--red)";
-              e.currentTarget.style.color = "var(--cream)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "transparent";
-              e.currentTarget.style.borderColor = "var(--border)";
-              e.currentTarget.style.color = "var(--ink)";
-            }}
-          >
-            <Arrow direction="next" />
-          </button>
-        </div>
-      </div>
-
-      {/* ── Slider ─────────────────────────────────────────────────────── */}
-      <div style={{ overflow: "hidden" }}>
+      <div style={{ padding: "0 48px 48px" }}>
         <div
-          ref={trackRef}
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            transition: "opacity .4s ease",
+            fontSize: "9px",
+            letterSpacing: ".3em",
+            textTransform: "uppercase",
+            color: "var(--ink-lt)",
+            fontFamily: "var(--sans)",
+            display: "flex",
+            alignItems: "center",
+            gap: "14px",
+            marginBottom: "16px",
           }}
         >
-          {visibleCards.map((creator, idx) => (
-            <CreatorCard key={`${current}-${idx}`} creator={creator} />
-          ))}
-
-          {/* Fill empty slots if last slide has < 3 creators */}
-          {visibleCards.length < PER_VIEW &&
-            Array.from({ length: PER_VIEW - visibleCards.length }).map(
-              (_, i) => (
-                <div
-                  key={`empty-${i}`}
-                  style={{ background: "var(--sand-3)", aspectRatio: "3/4" }}
-                />
-              ),
-            )}
+          <span
+            style={{
+              display: "inline-block",
+              width: "24px",
+              height: "1px",
+              background: "var(--red)",
+              flexShrink: 0,
+            }}
+          />
+          Our Network
         </div>
+
+        <h2
+          style={{
+            fontFamily: "var(--serif)",
+            fontSize: "clamp(44px, 6vw, 80px)",
+            fontWeight: 700,
+            lineHeight: 0.88,
+            letterSpacing: "-0.03em",
+            textTransform: "uppercase",
+            color: "var(--ink)",
+          }}
+        >
+          Meet our
+          <br />
+          <em style={{ fontStyle: "normal", color: "var(--red)" }}>creators</em>
+        </h2>
+      </div>
+
+      {/* ── Slider Wrapper ─────────────────────────────────────────────── */}
+      <div style={{ position: "relative", padding: "0 48px" }}>
+        {/* Prev Arrow */}
+        <button
+          onClick={() => goTo(current - 1)}
+          disabled={current === 0}
+          style={{
+            position: "absolute",
+            left: "24px", // Placed perfectly so it naturally overlaps padding and the card edge
+            top: "50%",
+            transform: "translateY(-50%)",
+            width: "48px",
+            height: "48px",
+            borderRadius: "50%",
+            background: "white",
+            border: "none",
+            boxShadow: "0 4px 14px rgba(0,0,0,0.15)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: current === 0 ? "default" : "pointer",
+            zIndex: 10,
+            opacity: current === 0 ? 0.35 : 1,
+            transition: "opacity 0.2s, transform 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            if (current !== 0)
+              e.currentTarget.style.transform = "translateY(-50%) scale(1.05)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(-50%) scale(1)";
+          }}
+        >
+          <Chevron direction="prev" />
+        </button>
+
+        {/* The grouped cards block (rounded corners, no gaps) */}
+        <div
+          style={{
+            borderRadius: "20px",
+            overflow: "hidden",
+            boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
+          }}
+        >
+          <div
+            ref={trackRef}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+            }}
+          >
+            {visibleCards.map((creator, idx) => (
+              <CreatorCard key={`${current}-${idx}`} creator={creator} />
+            ))}
+
+            {visibleCards.length < PER_VIEW &&
+              Array.from({ length: PER_VIEW - visibleCards.length }).map(
+                (_, i) => (
+                  <div
+                    key={`empty-${i}`}
+                    style={{ background: "var(--sand-3)", aspectRatio: "3/4" }}
+                  />
+                ),
+              )}
+          </div>
+        </div>
+
+        {/* Next Arrow */}
+        <button
+          onClick={() => goTo(current + 1)}
+          disabled={current === TOTAL_SLIDES - 1}
+          style={{
+            position: "absolute",
+            right: "24px", // Matches left arrow perfectly
+            top: "50%",
+            transform: "translateY(-50%)",
+            width: "48px",
+            height: "48px",
+            borderRadius: "50%",
+            background: "white",
+            border: "none",
+            boxShadow: "0 4px 14px rgba(0,0,0,0.15)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: current === TOTAL_SLIDES - 1 ? "default" : "pointer",
+            zIndex: 10,
+            opacity: current === TOTAL_SLIDES - 1 ? 0.35 : 1,
+            transition: "opacity 0.2s, transform 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            if (current !== TOTAL_SLIDES - 1)
+              e.currentTarget.style.transform = "translateY(-50%) scale(1.05)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(-50%) scale(1)";
+          }}
+        >
+          <Chevron direction="next" />
+        </button>
       </div>
     </section>
   );
@@ -273,10 +266,8 @@ function CreatorCard({ creator }) {
         overflow: "hidden",
         background: "var(--sand-3)",
         aspectRatio: "3/4",
-        cursor: "none",
       }}
     >
-      {/* Photo */}
       <Image
         src={creator.img}
         alt={creator.name}
@@ -292,7 +283,7 @@ function CreatorCard({ creator }) {
         unoptimized={creator.unoptimized}
       />
 
-      {/* ── Always-visible centered info (matches original hover state) ── */}
+      {/* ── Always-visible centered info ── */}
       <div
         style={{
           position: "absolute",
@@ -302,8 +293,7 @@ function CreatorCard({ creator }) {
           justifyContent: "center",
           alignItems: "center",
           padding: "32px",
-          /* Add a subtle dark overlay so white text is always legible */
-          background: "rgba(26, 23, 20, 0.4)",
+          background: "rgba(26, 23, 20, 0.45)", // dark overlay for readability
           zIndex: 2,
         }}
       >
@@ -311,25 +301,25 @@ function CreatorCard({ creator }) {
         <div
           style={{
             fontFamily: "var(--serif)",
-            fontSize: "28px",
+            fontSize: "clamp(24px, 2.5vw, 32px)",
             fontWeight: 700,
             color: "var(--cream)",
             textAlign: "center",
             lineHeight: 1.05,
             textTransform: "uppercase",
             letterSpacing: "-0.02em",
-            marginBottom: "8px",
+            marginBottom: "10px",
           }}
         >
           {creator.name}
         </div>
 
-        {/* Subscriber count (11px, DM Sans, muted cream) */}
+        {/* Subscriber count (13px, DM Sans, muted cream) */}
         <div
           style={{
-            fontSize: "14px",
+            fontSize: "13px",
             letterSpacing: ".1em",
-            color: "rgba(245,242,236,0.7)",
+            color: "rgba(245,242,236,0.8)",
             textAlign: "center",
             fontFamily: "var(--sans)",
           }}
