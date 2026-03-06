@@ -1,12 +1,13 @@
 import Banner from "@/component/Banner";
 import Brands from "@/component/Brands";
-import Image from "next/image";
+import Creators from "@/component/Creators";
 
 export default function Home() {
   return (
     <div>
       <Banner />
       <Brands />
+      <Creators />
     </div>
   );
 }
