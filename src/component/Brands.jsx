@@ -1,88 +1,214 @@
+"use client";
 
-// const Brands = () => {
-//   // Array of brand objects with name and dummy logo
-//   const brands = [
-//     { name: 'Vessi', logo: 'https://placehold.co/120x40/1a1714/f5f2ec?text=VESSI' },
-//     { name: 'HelloFresh', logo: 'https://placehold.co/140x40/1a1714/f5f2ec?text=HELLOFRESH' },
-//     { name: 'Kajabi', logo: 'https://placehold.co/120x40/1a1714/f5f2ec?text=KAJABI' },
-//     { name: 'Skillshare', logo: 'https://placehold.co/140x40/1a1714/f5f2ec?text=SKILLSHARE' },
-//     { name: 'Surfshark', logo: 'https://placehold.co/130x40/1a1714/f5f2ec?text=SURFSHARK' },
-//     { name: 'Huel', logo: 'https://placehold.co/100x40/1a1714/f5f2ec?text=HUEL' },
-//     { name: 'Ridge', logo: 'https://placehold.co/110x40/1a1714/f5f2ec?text=RIDGE' },
-//     { name: 'ExpressVPN', logo: 'https://placehold.co/140x40/1a1714/f5f2ec?text=EXPRESSVPN' },
-//     { name: 'Thrive Market', logo: 'https://placehold.co/160x40/1a1714/f5f2ec?text=THRIVE' },
-//     { name: 'BetterHelp', logo: 'https://placehold.co/140x40/1a1714/f5f2ec?text=BETTERHELP' },
-//     { name: 'SimpliSafe', logo: 'https://placehold.co/140x40/1a1714/f5f2ec?text=SIMPLISAFE' },
-//     { name: 'SeatGeek', logo: 'https://placehold.co/130x40/1a1714/f5f2ec?text=SEATGEEK' },
-//     { name: 'Incogni', logo: 'https://placehold.co/120x40/1a1714/f5f2ec?text=INCOGNI' },
-//     { name: 'Blue Nile', logo: 'https://placehold.co/130x40/1a1714/f5f2ec?text=BLUE+NILE' },
-//     { name: 'Liquid I.V.', logo: 'https://placehold.co/130x40/1a1714/f5f2ec?text=LIQUID+IV' },
-//     { name: 'Rocket Money', logo: 'https://placehold.co/150x40/1a1714/f5f2ec?text=ROCKET' },
-//     { name: 'MeUndies', logo: 'https://placehold.co/130x40/1a1714/f5f2ec?text=MEUNDIES' },
-//     { name: 'Manscaped', logo: 'https://placehold.co/140x40/1a1714/f5f2ec?text=MANSCAPED' },
-//   ];
+import Image from "next/image";
 
-//   return (
-//     <section className="border-t border-[#e2ddd6] bg-[#f5f2ec] overflow-hidden">
-//       {/* Brands Header */}
-//       <div className="px-12 pt-12 pb-8 flex items-center gap-3.5">
-//         <span className="w-6 h-px bg-[#d63a5d]"></span>
-//         <span className="text-[9px] tracking-[0.3em] uppercase text-[#6b645c] font-normal">
-//           Brands We Work With
-//         </span>
-//       </div>
+/* ─── All 66 brand logos inside /public/brands ──────────────────────────── */
+const BRAND_LOGOS = [
+  { src: "/brands/AmericanFinancing.png", alt: "American Financing" },
+  { src: "/brands/BL-HorizontalLogo-Large.webp", alt: "BL" },
+  { src: "/brands/BetterHelp.svg", alt: "BetterHelp" },
+  { src: "/brands/CU_Logo_Horizontal-01.png", alt: "CU" },
+  { src: "/brands/CashGiraffe.png", alt: "Cash Giraffe" },
+  { src: "/brands/Cashapp.png", alt: "Cash App" },
+  { src: "/brands/Chapter.png", alt: "Chapter" },
+  { src: "/brands/Cowboycolostrum.png", alt: "Cowboy Colostrum" },
+  {
+    src: "/brands/CozyEarth_Wordmark_Horizontal_87958ec3-0fba-4c21-aa33-f571204b95b3.webp",
+    alt: "Cozy Earth",
+  },
+  { src: "/brands/CyberGhost.png", alt: "CyberGhost" },
+  { src: "/brands/DeleteMe.png", alt: "DeleteMe" },
+  { src: "/brands/DraftKings.png", alt: "DraftKings" },
+  { src: "/brands/DudeWipes.png", alt: "Dude Wipes" },
+  { src: "/brands/Ekster.jpg", alt: "Ekster" },
+  { src: "/brands/EllaOla.webp", alt: "Ella Ola" },
+  { src: "/brands/Experian.png", alt: "Experian" },
+  { src: "/brands/ExpressVPN.png", alt: "ExpressVPN" },
+  { src: "/brands/Fabric.png", alt: "Fabric" },
+  { src: "/brands/Factor.webp", alt: "Factor" },
+  { src: "/brands/Freecash.svg", alt: "Freecash" },
+  { src: "/brands/Gld.webp", alt: "GLD" },
+  { src: "/brands/Goldco.avif", alt: "Goldco" },
+  { src: "/brands/Goodchop.webp", alt: "Good Chop" },
+  { src: "/brands/Harrys.png", alt: "Harry's" },
+  { src: "/brands/Honeylove.avif", alt: "Honeylove" },
+  { src: "/brands/Huel.png", alt: "Huel" },
+  { src: "/brands/Incogni.com_logo.png", alt: "Incogni" },
+  { src: "/brands/JoiandBlokes.svg", alt: "Joi & Blokes" },
+  { src: "/brands/JonesRoad.jpg", alt: "Jones Road" },
+  { src: "/brands/Kalshi.png", alt: "Kalshi" },
+  { src: "/brands/Lovebird.webp", alt: "Lovebird" },
+  { src: "/brands/Morgan%26Morgan.png", alt: "Morgan & Morgan" },
+  { src: "/brands/MyHeritage.png", alt: "MyHeritage" },
+  { src: "/brands/NationalDebtRelief.jpg", alt: "National Debt Relief" },
+  { src: "/brands/NicNac.webp", alt: "NicNac" },
+  { src: "/brands/Oneskin.webp", alt: "OneSkin" },
+  { src: "/brands/Opusclip.webp", alt: "Opus Clip" },
+  { src: "/brands/PDSDebt-.png", alt: "PDS Debt" },
+  { src: "/brands/Particle-Logo.jpg", alt: "Particle" },
+  { src: "/brands/Plaud.webp", alt: "Plaud" },
+  { src: "/brands/Prizepicks.svg", alt: "PrizePicks" },
+  { src: "/brands/Proof.webp", alt: "Proof" },
+  { src: "/brands/Quo.png", alt: "Quo" },
+  { src: "/brands/Raycon.webp", alt: "Raycon" },
+  { src: "/brands/Rugiet.png", alt: "Rugiet" },
+  { src: "/brands/SAN.jpeg", alt: "SAN" },
+  { src: "/brands/Saily.svg", alt: "Saily" },
+  { src: "/brands/Seatgeek.png", alt: "SeatGeek" },
+  { src: "/brands/Simplisafe.png", alt: "SimpliSafe" },
+  { src: "/brands/Stopbox.avif", alt: "Stopbox" },
+  { src: "/brands/Surfshark.png", alt: "Surfshark" },
+  { src: "/brands/TaxHardship-logo.webp", alt: "Tax Hardship" },
+  { src: "/brands/TaxNetwork.png", alt: "Tax Network" },
+  { src: "/brands/TiegeHanley.webp", alt: "Tiege Hanley" },
+  { src: "/brands/ToupsandCo.webp", alt: "Toups & Co" },
+  { src: "/brands/Trade.png", alt: "Trade" },
+  { src: "/brands/Tseg.png", alt: "TSEG" },
+  { src: "/brands/Underdog.webp", alt: "Underdog" },
+  { src: "/brands/Upside.avif", alt: "Upside" },
+  { src: "/brands/Vanman.avif", alt: "Vanman" },
+  { src: "/brands/Wildgrain.png", alt: "Wildgrain" },
+  { src: "/brands/Zocdoc.png", alt: "Zocdoc" },
+  {
+    src: "/brands/death-breath-metal-band-logo-logo-icon-png-svg.png",
+    alt: "Death Breath",
+  },
+  { src: "/brands/odoo.png", alt: "Odoo" },
+  { src: "/brands/omniwatch.jpeg", alt: "Omniwatch" },
+  { src: "/brands/rag%26bone.png", alt: "Rag & Bone" },
+];
 
-//       {/* Ticker Container */}
-//       <div className="overflow-hidden py-5 pb-10 relative">
-//         {/* Gradient Overlays */}
-//         <div className="absolute left-0 top-0 bottom-0 w-28 z-10 pointer-events-none bg-gradient-to-r from-[#f5f2ec] to-transparent"></div>
-//         <div className="absolute right-0 top-0 bottom-0 w-28 z-10 pointer-events-none bg-gradient-to-l from-[#f5f2ec] to-transparent"></div>
+/* Doubled for seamless infinite scroll — same trick as the HTML version */
+const TICKER_ITEMS = [...BRAND_LOGOS, ...BRAND_LOGOS];
 
-//         {/* Ticker Track */}
-//         <div className="flex w-max animate-tick hover:animation-play-state-paused">
-//           {/* First set of brands */}
-//           {brands.map((brand, index) => (
-//             <div
-//               key={`brand-1-${index}`}
-//               className="flex items-center justify-center px-13 h-[60px] border-r border-[#e2ddd6] hover:text-[#d63a5d] transition-colors duration-200 select-none"
-//             >
-//               <img 
-//                 src={brand.logo} 
-//                 alt={brand.name}
-//                 className="h-8 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
-//               />
-//             </div>
-//           ))}
-          
-//           {/* Duplicate set for infinite scroll effect */}
-//           {brands.map((brand, index) => (
-//             <div
-//               key={`brand-2-${index}`}
-//               className="flex items-center justify-center px-13 h-[60px] border-r border-[#e2ddd6] hover:text-[#d63a5d] transition-colors duration-200 select-none"
-//             >
-//               <img 
-//                 src={brand.logo} 
-//                 alt={brand.name}
-//                 className="h-8 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
-//               />
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Brands;
-
-import React from 'react';
-
-const Brands = () => {
+export default function Brands() {
   return (
-    <div>
-      
-    </div>
-  );
-};
+    <section
+      style={{
+        borderTop: "1px solid var(--border)",
+        background: "var(--cream)",
+        overflow: "hidden",
+      }}
+    >
+      {/* ── Header label ───────────────────────────────────────────────── */}
+      <div
+        style={{
+          padding: "48px 48px 32px",
+          display: "flex",
+          alignItems: "center",
+          gap: "14px",
+          fontSize: "9px",
+          letterSpacing: ".3em",
+          textTransform: "uppercase",
+          color: "var(--ink-lt)",
+          fontWeight: 400,
+        }}
+      >
+        {/* red dash before label — mirroring .brands-header::before */}
+        <span
+          style={{
+            display: "inline-block",
+            width: "24px",
+            height: "1px",
+            background: "var(--red)",
+            flexShrink: 0,
+          }}
+        />
+        Brands We Work With
+      </div>
 
-export default Brands;
+      {/* ── Ticker outer wrapper with fade edges ───────────────────────── */}
+      <div
+        style={{
+          overflow: "hidden",
+          padding: "20px 0 40px",
+          position: "relative",
+        }}
+      >
+        {/* Left fade */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: 0,
+            width: "120px",
+            background: "linear-gradient(to right, var(--cream), transparent)",
+            zIndex: 2,
+            pointerEvents: "none",
+          }}
+        />
+        {/* Right fade */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            right: 0,
+            width: "120px",
+            background: "linear-gradient(to left, var(--cream), transparent)",
+            zIndex: 2,
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* ── Scrolling track ──────────────────────────────────────────── */}
+        <div
+          className="ticker-track"
+          style={{
+            display: "flex",
+            width: "max-content",
+            alignItems: "center",
+          }}
+        >
+          {TICKER_ITEMS.map((brand, idx) => (
+            <div
+              key={idx}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "0 52px",
+                height: "60px",
+                borderRight: "1px solid var(--border)",
+                flexShrink: 0,
+                userSelect: "none",
+              }}
+            >
+              <Image
+                src={brand.src}
+                alt={brand.alt}
+                width={120}
+                height={40}
+                style={{
+                  objectFit: "contain",
+                  height: "36px",
+                  width: "auto",
+                  maxWidth: "120px",
+                  /* Desaturate slightly — matches the original CSS filter feel */
+                  filter: "grayscale(30%) opacity(0.75)",
+                  transition: "filter 0.2s",
+                }}
+                /* Only eagerly load the first set; the duplicate is lazy */
+                loading={idx < BRAND_LOGOS.length ? "eager" : "lazy"}
+                /* quality 75 is a great balance between sharpness and size */
+                quality={75}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.filter = "grayscale(0%) opacity(1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.filter = "grayscale(30%) opacity(0.75)";
+                }}
+                unoptimized={
+                  brand.src.endsWith(".svg") || brand.src.endsWith(".avif")
+                }
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

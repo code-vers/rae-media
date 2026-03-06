@@ -1,2 +1,101 @@
 @import "tailwindcss";
 
+:root {
+  --sand:       #EDE8DF;
+  --sand-2:     #E4DDD1;
+  --sand-3:     #D5CCBC;
+  --cream:      #F5F2EC;
+  --ink:        #1A1714;
+  --ink-mid:    #4A4540;
+  --ink-lt:     #7A7268;
+  --red:        #E8215A;
+  --red-dk:     #C41A4A;
+  --border:     rgba(26,23,20,0.1);
+  --serif:      'Oswald', 'Arial Narrow', sans-serif;
+  --body-serif: 'DM Sans', sans-serif;
+  --sans:       'DM Sans', sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* CUSTOM CURSOR */
+#cur {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+#cur-ring {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--ink-mid);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, border-color 0.3s;
+}
+
+body:has(a:hover) #cur-ring,
+body:has(button:hover) #cur-ring {
+  width: 52px;
+  height: 52px;
+  border-color: var(--red);
+}
+
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* TICKER */
+@keyframes tick {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  animation: tick 35s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* STEP LIST HOVER */
+.step-li:hover {
+  background: var(--sand);
+  margin: 0 -48px;
+  padding-left: 48px;
+  padding-right: 48px;
+}
