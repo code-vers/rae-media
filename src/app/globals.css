@@ -1,22 +1,55 @@
+/* ─── Local Font Faces ─────────────────────────────────────────────────────
+   DM Sans variable font  →  used for body text, UI labels, buttons
+   Oswald variable font   →  used for all display headings / hero titles
+   Both served from /public — zero external network request.
+────────────────────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/DM_Sans/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/DM_Sans/DMSans-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 :root {
-  --sand:       #EDE8DF;
-  --sand-2:     #E4DDD1;
-  --sand-3:     #D5CCBC;
-  --cream:      #F5F2EC;
-  --ink:        #1A1714;
-  --ink-mid:    #4A4540;
-  --ink-lt:     #7A7268;
-  --red:        #E8215A;
-  --red-dk:     #C41A4A;
-  --border:     rgba(26,23,20,0.1);
-  --serif:      'Oswald', 'Arial Narrow', sans-serif;
-  --body-serif: 'DM Sans', sans-serif;
-  --sans:       'DM Sans', sans-serif;
+  --sand: #ede8df;
+  --sand-2: #e4ddd1;
+  --sand-3: #d5ccbc;
+  --cream: #f5f2ec;
+  --ink: #1a1714;
+  --ink-mid: #4a4540;
+  --ink-lt: #7a7268;
+  --red: #e8215a;
+  --red-dk: #c41a4a;
+  --border: rgba(26, 23, 20, 0.1);
+  --serif: "Oswald", "Arial Narrow", sans-serif;
+  --body-serif: "DM Sans", sans-serif;
+  --sans: "DM Sans", sans-serif;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -56,7 +89,10 @@ body {
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, border-color 0.3s;
+  transition:
+    width 0.3s,
+    height 0.3s,
+    border-color 0.3s;
 }
 
 body:has(a:hover) #cur-ring,
@@ -70,7 +106,9 @@ body:has(button:hover) #cur-ring {
 .reveal {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .reveal.in {
@@ -78,14 +116,19 @@ body:has(button:hover) #cur-ring {
   transform: none;
 }
 
-/* TICKER */
+/* ─── BRANDS TICKER ─────────────────────────────────────────────────────── */
 @keyframes tick {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
+/* 120s = slow, elegant marquee scroll */
 .ticker-track {
-  animation: tick 35s linear infinite;
+  animation: tick 120s linear infinite;
 }
 
 .ticker-track:hover {
