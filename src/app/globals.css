@@ -142,3 +142,126 @@ body:has(button:hover) #cur-ring {
   padding-left: 48px;
   padding-right: 48px;
 }
+
+/* SECTION EYEBROW */
+.section-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-lt);
+  font-weight: 400;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.section-eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--red);
+}
+
+/* TESTIMONIALS */
+.testimonials-section {
+  padding: 88px 48px;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+}
+.testimonials-section.testimonials-dark {
+  background: var(--ink);
+}
+.testimonials-header {
+  margin-bottom: 64px;
+}
+.testimonials-h2 {
+  font-family: var(--serif);
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 12px;
+}
+.testimonials-h2 em {
+  font-style: normal;
+  color: var(--red);
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+}
+.tcard {
+  background: var(--cream);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  transition: background 0.3s;
+}
+.tcard:hover {
+  background: var(--sand);
+}
+.tcard-ink {
+  background: #222018;
+  color: var(--cream);
+}
+.tcard-ink:hover {
+  background: #2a2724;
+}
+.tcard-quote {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ink-mid);
+  font-style: italic;
+  font-weight: 300;
+}
+.tcard-ink .tcard-quote {
+  color: rgba(245, 242, 236, 0.75);
+}
+.tcard-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.tcard-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--sand-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.tcard-avatar-red {
+  background: var(--red);
+  color: var(--cream);
+}
+.tcard-name {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.tcard-ink .tcard-name {
+  color: var(--cream);
+}
+.tcard-role {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-lt);
+  margin-top: 3px;
+}
