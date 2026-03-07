@@ -3,7 +3,7 @@ const Banner = () => {
   return (
     <section
       id="mission"
-      className="bg-(--cream) pt-35 px-12 pb-25 grid grid-cols-2 gap-20 items-center min-h-screen"
+      className="bg-(--cream) pt-35 px-12 pb-25 grid md:grid-cols-2 gap-20 items-center min-h-screen"
     >
       {/* Left Column */}
       <div className="flex flex-col gap-10">
@@ -14,7 +14,7 @@ const Banner = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="[font-family:var(--serif)] text-[clamp(56px,6.5vw,104px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-(--ink)">
+        <h2 className="[font-family:var(--serif)]  text-[clamp(56px,6.5vw,104px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-(--ink)">
           We engineer<br />campaigns that<br />
           <em className="not-italic text-(--red)">actually</em> work.
         </h2>
