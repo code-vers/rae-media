@@ -12,7 +12,8 @@ export default function Home() {
       <Brands />
       <Creators />
       <BrandTestimonials />
-      <CreatorTestimonials />
+      <CreatorTestimonials/>
+
       <Contact />
     </div>
   );
