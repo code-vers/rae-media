@@ -19,7 +19,7 @@ export default function OriginalProgramming() {
           </div>
 
           {/* Heading */}
-          <h1 className="[font-family:var(--serif)] text-[clamp(44px,11vw,84px)] md:text-[clamp(56px,5.5vw,88px)] xl:text-[clamp(56px,5vw,84px)] font-bold leading-[1] md:leading-[0.88] tracking-[-0.03em] uppercase text-(--ink) mb-6 md:mb-10">
+          <h1 className="[font-family:var(--serif)] text-[clamp(44px,11vw,84px)] md:text-[clamp(56px,5.5vw,88px)] xl:text-[clamp(56px,5vw,84px)] font-bold leading-none md:leading-[0.88] tracking-[-0.03em] uppercase text-(--ink) mb-6 md:mb-10">
             Original
             <br />
             <em className="not-italic text-(--red)">Programming</em>

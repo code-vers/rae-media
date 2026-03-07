@@ -60,16 +60,28 @@ const Navbar = () => {
 
           {/* Center Text */}
           <span className="text-[9px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal whitespace-nowrap">
-            YouTube Creator Agency
+            {/* YouTube Creator Agency */}
           </span>
 
           {/* Navigation */}
           <nav className="flex items-center justify-end gap-9">
             <a
-              href="#contact"
+              href="/"
+              className="text-[10px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+            >
+              Home
+            </a>
+            <a
+              href="/contact"
               className="text-[10px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
             >
               Contact
+            </a>
+            <a
+              href="/team"
+              className="text-[10px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+            >
+              Team
             </a>
             <a
               href="/original-programming"
@@ -78,7 +90,7 @@ const Navbar = () => {
               Original Programming
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="text-[10px] tracking-[0.18em] uppercase font-medium text-(--cream) bg-(--red) px-5.5 py-2.25 hover:bg-(--red-dk) transition-colors duration-200 no-underline"
             >
               Get Started
@@ -139,15 +151,17 @@ const Navbar = () => {
           }}
         >
           {/* Tagline inside menu */}
-          <div className="px-5 pt-4 pb-2">
+          {/* <div className="px-5 pt-4 pb-2">
             <span className="text-[8px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal whitespace-nowrap">
               YouTube Creator Agency
             </span>
-          </div>
+          </div> */}
 
           <nav className="flex flex-col px-5 pb-5 gap-0">
             {[
-              { href: "#contact", label: "Contact" },
+              { href: "/", label: "Home" },
+              { href: "/contact", label: "Contact" },
+              { href: "/team", label: "Team" },
               { href: "/original-programming", label: "Original Programming" },
             ].map((item) => (
               <a
@@ -160,7 +174,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/contact"
               onClick={handleLinkClick}
               className="mt-4 text-[10px] tracking-[0.18em] uppercase font-medium text-(--cream) bg-(--red) px-5.5 py-3 hover:bg-(--red-dk) transition-colors duration-200 no-underline text-center"
             >
