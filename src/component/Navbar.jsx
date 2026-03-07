@@ -53,7 +53,7 @@ const Navbar = () => {
         </a>
         <a 
           href="#contact" 
-          className="text-[10px] tracking-[0.18em] uppercase font-medium text-(--cream) bg-(--red) px-[5.5 py-2.25 hover:bg-(--red-dk) transition-colors duration-200 no-underline"
+          className="text-[10px] tracking-[0.18em] uppercase font-medium text-(--cream) bg-(--red) px-5.5 py-2.25 hover:bg-(--red-dk) transition-colors duration-200 no-underline"
         >
           Get Started
         </a>
