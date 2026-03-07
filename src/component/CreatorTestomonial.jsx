@@ -26,8 +26,7 @@ export default function CreatorTestimonials() {
   ];
 
   return (
-    <section className="py-[88px] px-6 md:px-12 bg-[var(--ink)] relative overflow-hidden border-t border-[var(--border)]">
-      
+    <section className="py-[88px] px-6 md:px-12 bg-(--ink) relative overflow-hidden border-t border-(--border)">
       {/* Background Pattern */}
       <div
         className="absolute inset-0 opacity-15 z-0"
@@ -40,17 +39,19 @@ export default function CreatorTestimonials() {
       />
 
       <div className="relative z-10 max-w-[1400px] mx-auto">
-
         {/* Header */}
         <div className="mb-16  max-w-[720px]">
-          <div className="text-xs  tracking-[0.2em] uppercase text-[var(--red)] font-semibold mb-4 font-[var(--sans)]">
+          <div className="text-xs  tracking-[0.2em] uppercase text-(--red) font-semibold mb-4">
             Creator Testimonials
           </div>
 
-          <h2 className="[font-family:var(--serif)] [font-family:var(--serif)] text-[clamp(40px,5vw,72px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-[var(--cream)]">
+          <h2 className="[font-family:var(--serif)] text-[clamp(40px,5vw,72px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-(--cream)">
             And our
             <br />
-            <span className="text-[var(--red)] [font-family:var(--serif)]">creators</span> too.
+            <span className="text-(--red) [font-family:var(--serif)]">
+              creators
+            </span>{" "}
+            too.
           </h2>
         </div>
 
@@ -59,7 +60,7 @@ export default function CreatorTestimonials() {
           {creatorTestimonials.map((t, idx) => (
             <div
               key={idx}
-              className="relative overflow-hidden rounded-[6px] aspect-[3/4] group cursor-pointer"
+              className="relative overflow-hidden rounded-[6px] aspect-3/4 group cursor-pointer"
             >
               {/* Image */}
               <Image
@@ -72,20 +73,19 @@ export default function CreatorTestimonials() {
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end p-9 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-20">
-
+              <div className="absolute inset-0 flex flex-col justify-end p-9 bg-linear-to-t from-black/80 via-black/20 to-transparent z-20">
                 {/* Quote */}
-                <p className="font-[var(--sans)] text-[13px] leading-[1.7] text-[rgba(245,242,236,0.9)] italic font-light mb-5">
+                <p className="text-[13px] leading-[1.7] text-[rgba(245,242,236,0.9)] italic font-light mb-5">
                   “{t.quote}”
                 </p>
 
                 {/* Author */}
                 <div>
-                  <div className="font-[var(--serif)] text-sm font-bold tracking-[-0.01em] uppercase text-[var(--sand)]">
+                  <div className="text-sm font-bold tracking-[-0.01em] uppercase text-(--sand)">
                     {t.name}
                   </div>
 
-                  <div className="text-[11px] tracking-[0.08em] text-[rgba(245,242,236,0.6)] mt-0.5 font-[var(--sans)]">
+                  <div className="text-[11px] tracking-[0.08em] text-[rgba(245,242,236,0.6)] mt-0.5">
                     {t.role}
                   </div>
                 </div>
