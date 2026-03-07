@@ -1,7 +1,7 @@
-'use client'
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import logo from '../../public/logo.png';
+"use client";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import logo from "../../public/logo.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -15,8 +15,8 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [scrolled]);
 
   // Close menu on scroll
@@ -31,23 +31,31 @@ const Navbar = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-100 transition-[padding,border-color] duration-500 border-b border-[rgba(26,23,20,0.06)] ${
           scrolled
-            ? 'bg-[rgba(245,242,236,0.85)] shadow-[0_1px_40px_rgba(26,23,20,0.06)]'
-            : 'bg-[rgba(245,242,236,0.35)] shadow-[0_1px_40px_rgba(26,23,20,0.04)]'
+            ? "bg-[rgba(245,242,236,0.85)] shadow-[0_1px_40px_rgba(26,23,20,0.06)]"
+            : "bg-[rgba(245,242,236,0.35)] shadow-[0_1px_40px_rgba(26,23,20,0.04)]"
         }`}
         style={{
-          backdropFilter: scrolled ? 'blur(20px)' : 'blur(20px) saturate(1.4)',
-          WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'blur(20px) saturate(1.4)',
+          backdropFilter: scrolled ? "blur(20px)" : "blur(20px) saturate(1.4)",
+          WebkitBackdropFilter: scrolled
+            ? "blur(20px)"
+            : "blur(20px) saturate(1.4)",
         }}
       >
         {/* Desktop Navbar */}
         <div
           className={`hidden md:grid grid-cols-[1fr_auto_1fr] items-center px-12 transition-[padding] duration-500 ${
-            scrolled ? 'py-3.5' : 'py-5.5'
+            scrolled ? "py-3.5" : "py-5.5"
           }`}
         >
           {/* Logo */}
           <a href="#" className="no-underline">
-            <Image src={logo} alt="RAE" height={200} width={200} className="h-8 w-auto block" />
+            <Image
+              src={logo}
+              alt="RAE"
+              height={200}
+              width={200}
+              className="h-8 w-auto block"
+            />
           </a>
 
           {/* Center Text */}
@@ -57,14 +65,17 @@ const Navbar = () => {
 
           {/* Navigation */}
           <nav className="flex items-center justify-end gap-9">
-            <a href="#process" className="text-[10px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200">
-              Process
-            </a>
-            <a href="#creators" className="text-[10px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200">
-              Creators
-            </a>
-            <a href="#contact" className="text-[10px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200">
+            <a
+              href="#contact"
+              className="text-[10px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+            >
               Contact
+            </a>
+            <a
+              href="/original-programming"
+              className="text-[10px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+            >
+              Original Programming
             </a>
             <a
               href="#contact"
@@ -78,12 +89,18 @@ const Navbar = () => {
         {/* Mobile Navbar */}
         <div
           className={`flex md:hidden items-center justify-between px-5 transition-[padding] duration-500 ${
-            scrolled ? 'py-3.5' : 'py-4'
+            scrolled ? "py-3.5" : "py-4"
           }`}
         >
           {/* Logo */}
           <a href="#" className="no-underline">
-            <Image src={logo} alt="RAE" height={200} width={200} className="h-7 w-auto block" />
+            <Image
+              src={logo}
+              alt="RAE"
+              height={200}
+              width={200}
+              className="h-7 w-auto block"
+            />
           </a>
 
           {/* Hamburger Button */}
@@ -94,17 +111,17 @@ const Navbar = () => {
           >
             <span
               className={`block h-[1.5px] bg-[var(--ink-mid,#3a3530)] transition-all duration-300 origin-center ${
-                menuOpen ? 'w-5 rotate-45 translate-y-[6.5px]' : 'w-5'
+                menuOpen ? "w-5 rotate-45 translate-y-[6.5px]" : "w-5"
               }`}
             />
             <span
               className={`block h-[1.5px] bg-[var(--ink-mid,#3a3530)] transition-all duration-300 ${
-                menuOpen ? 'w-0 opacity-0' : 'w-5 opacity-100'
+                menuOpen ? "w-0 opacity-0" : "w-5 opacity-100"
               }`}
             />
             <span
               className={`block h-[1.5px] bg-[var(--ink-mid,#3a3530)] transition-all duration-300 origin-center ${
-                menuOpen ? 'w-5 -rotate-45 -translate-y-[6.5px]' : 'w-5'
+                menuOpen ? "w-5 -rotate-45 -translate-y-[6.5px]" : "w-5"
               }`}
             />
           </button>
@@ -113,10 +130,12 @@ const Navbar = () => {
         {/* Mobile Dropdown Menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
           style={{
-            borderTop: menuOpen ? '1px solid rgba(26,23,20,0.06)' : '1px solid transparent',
+            borderTop: menuOpen
+              ? "1px solid rgba(26,23,20,0.06)"
+              : "1px solid transparent",
           }}
         >
           {/* Tagline inside menu */}
@@ -128,9 +147,8 @@ const Navbar = () => {
 
           <nav className="flex flex-col px-5 pb-5 gap-0">
             {[
-              { href: '#process', label: 'Process' },
-              { href: '#creators', label: 'Creators' },
-              { href: '#contact', label: 'Contact' },
+              { href: "#contact", label: "Contact" },
+              { href: "/original-programming", label: "Original Programming" },
             ].map((item) => (
               <a
                 key={item.href}
