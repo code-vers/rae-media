@@ -121,19 +121,12 @@ export default function Creators() {
     [totalSlides],
   );
 
-  const start = current * perView;
-  const visibleCards = CREATORS.slice(start, start + perView);
-
-  /* Grid column class based on perView */
-  const gridColsClass =
-    perView === 1
-      ? "grid-cols-1"
-      : perView === 2
-        ? "grid-cols-2"
-        : "grid-cols-3";
-
   /* Image sizes attribute for responsive optimization */
   const imageSizes = perView === 1 ? "100vw" : perView === 2 ? "50vw" : "33vw";
+
+  /* Each card width as a percentage of the track container */
+  const cardWidthPercent = 100 / perView;
+  const translateX = -(current * 100);
 
   return (
     <section
@@ -176,26 +169,22 @@ export default function Creators() {
           <Chevron direction="prev" />
         </button>
 
-        {/* The grouped cards block (rounded corners, no gaps) */}
+        {/* The sliding track */}
         <div className="rounded-[12px] md:rounded-[16px] lg:rounded-[20px] overflow-hidden shadow-[0_10px_25px_rgba(0,0,0,0.15)] md:shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
-          <div ref={trackRef} className={`grid ${gridColsClass}`}>
-            {visibleCards.map((creator, idx) => (
-              <CreatorCard
-                key={`${current}-${idx}`}
-                creator={creator}
-                sizes={imageSizes}
-              />
+          <div
+            ref={trackRef}
+            className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+            style={{ transform: `translateX(${translateX}%)` }}
+          >
+            {CREATORS.map((creator, idx) => (
+              <div
+                key={idx}
+                className="shrink-0"
+                style={{ width: `${cardWidthPercent}%` }}
+              >
+                <CreatorCard creator={creator} sizes={imageSizes} />
+              </div>
             ))}
-
-            {visibleCards.length < perView &&
-              Array.from({ length: perView - visibleCards.length }).map(
-                (_, i) => (
-                  <div
-                    key={`empty-${i}`}
-                    className="bg-(--sand-3) aspect-3/4"
-                  />
-                ),
-              )}
           </div>
         </div>
 
