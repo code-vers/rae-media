@@ -33,9 +33,10 @@ export default function BrandTestimonials() {
       className="py-12 px-5 md:py-16 md:px-8 lg:py-22 lg:px-12 bg-(--cream) border-t border-(--border)"
     >
       <div className="mb-8 md:mb-12 lg:mb-16">
-        <div className="text-[10px] md:text-xs tracking-[0.2em] uppercase text-(--red) font-semibold mb-3 md:mb-4">
-          Brand Testimonials
-        </div>
+          <div className="flex items-center gap-3.5 text-[10px] md:text-[9px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal mb-6 md:mb-8">
+            <span className="w-6 h-px bg-(--red) shrink-0" />
+            Brand Testimonials
+          </div>
         <h2 className="[font-family:var(--serif)] text-[clamp(36px,6vw,72px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-(--ink) mt-2 md:mt-3">
           Here&apos;s what our
           <br />
