@@ -85,22 +85,22 @@ export default function Brands() {
   return (
     <section className="border-t border-(--border) bg-(--cream) overflow-hidden">
       {/* ── Header label ───────────────────────────────────────────────── */}
-      <div className="pt-12 px-12 pb-8 flex items-center gap-3.5 text-[9px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal">
+      <div className="pt-8 px-5 pb-5 md:pt-10 md:px-8 md:pb-6 lg:pt-12 lg:px-12 lg:pb-8 flex items-center gap-3.5 text-[9px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal">
         <span className="inline-block w-6 h-px bg-(--red) shrink-0" />
         Brands We Work With
       </div>
 
       {/* ── Ticker outer wrapper with fade edges ───────────────────────── */}
-      <div className="overflow-hidden pt-5 pb-10 relative">
+      <div className="overflow-hidden pt-3 pb-6 md:pt-4 md:pb-8 lg:pt-5 lg:pb-10 relative">
         {/* Left fade */}
         <div
           aria-hidden="true"
-          className="absolute top-0 bottom-0 left-0 w-30 bg-linear-to-r from-(--cream) to-transparent z-2 pointer-events-none"
+          className="absolute top-0 bottom-0 left-0 w-12 md:w-20 lg:w-30 bg-linear-to-r from-(--cream) to-transparent z-2 pointer-events-none"
         />
         {/* Right fade */}
         <div
           aria-hidden="true"
-          className="absolute top-0 bottom-0 right-0 w-30 bg-linear-to-l from-(--cream) to-transparent z-2 pointer-events-none"
+          className="absolute top-0 bottom-0 right-0 w-12 md:w-20 lg:w-30 bg-linear-to-l from-(--cream) to-transparent z-2 pointer-events-none"
         />
 
         {/* ── Scrolling track ──────────────────────────────────────────── */}
@@ -108,14 +108,14 @@ export default function Brands() {
           {TICKER_ITEMS.map((brand, idx) => (
             <div
               key={idx}
-              className="flex items-center justify-center px-13 h-[15 border-r border-(--border) shrink-0 select-none"
+              className="flex items-center justify-center px-6 md:px-9 lg:px-13 h-[40px] md:h-[50px] lg:h-[60px] border-r border-(--border) shrink-0 select-none"
             >
               <Image
                 src={brand.src}
                 alt={brand.alt}
                 width={120}
                 height={40}
-                className="object-contain h-9 w-auto max-w-13 grayscale-30 opacity-75 transition-[filter] duration-200 hover:grayscale-0 hover:opacity-100"
+                className="object-contain h-6 md:h-7 lg:h-9 w-auto max-w-10 md:max-w-11 lg:max-w-13 grayscale-30 opacity-75 transition-[filter] duration-200 hover:grayscale-0 hover:opacity-100"
                 loading={idx < BRAND_LOGOS.length ? "eager" : "lazy"}
                 quality={75}
                 onMouseEnter={(e) => {
