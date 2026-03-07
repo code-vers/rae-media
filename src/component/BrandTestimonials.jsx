@@ -28,91 +28,59 @@ export default function BrandTestimonials() {
   ];
 
   return (
-    <>
-      {/* BRAND TESTIMONIALS */}
-
-      <section
-        id="brands-say"
-        style={{
-          padding: "88px 48px",
-          backgroundColor: "#F5F2EC", // cream
-          borderTop: "1px solid rgba(26,23,20,0.08)", // border
-        }}
-      >
-        <div style={{ marginBottom: "64px" }}>
-          <div
-            style={{
-              fontSize: "12px",
-              letterSpacing: ".2em",
-              textTransform: "uppercase",
-              color: "#D63A5D", // red
-              fontWeight: 600,
-              marginBottom: "16px",
-            }}
-          >
-            Brand Testimonials
-          </div>
-          <h2
-            style={{
-              fontFamily: "var(--serif)",
-              fontSize: "clamp(40px,5vw,72px)",
-              fontWeight: 700,
-              lineHeight: 0.88,
-              letterSpacing: "-.03em",
-              textTransform: "uppercase",
-              color: "#1A1714", // ink
-              marginTop: "12px",
-            }}
-          >
-            Here's what our
-            <br />
-            <em
-              style={{
-                fontStyle: "normal",
-                color: "#D63A5D", // red
-              }}
-            >
-              brands
-            </em>{" "}
-            say.
-          </h2>
+    <section
+      id="brands-say"
+      className="py-22 px-12 bg-(--cream) border-t border-(--border)"
+    >
+      <div className="mb-16">
+        <div className="text-xs tracking-[0.2em] uppercase text-(--red) font-semibold mb-4">
+          Brand Testimonials
         </div>
+        <h2 className="[font-family:var(--serif)] text-[clamp(40px,5vw,72px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-(--ink) mt-3">
+          Here&apos;s what our
+          <br />
+          <em className="not-italic text-(--red)">brands</em> say.
+        </h2>
+      </div>
 
-        <div
-          className="testimonials-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "2px",
-            backgroundColor: "rgba(26,23,20,0.08)", // border (creates the thin gap lines)
-          }}
-        >
-          {testimonials.map((t, idx) => (
-            <div key={idx} className="tcard">
-              <div className="tcard-quote">{t.quote}</div>
+      <div className="grid grid-cols-3 gap-[2px] bg-(--border)">
+        {testimonials.map((t, idx) => (
+          <div
+            key={idx}
+            className="bg-(--cream) p-12 flex flex-col justify-between gap-10 transition-colors duration-300 hover:bg-(--sand)"
+          >
+            <div className="[font-family:var(--sans)] text-[15px] leading-[1.75] text-(--ink-mid) italic font-light">
+              {t.quote}
+            </div>
 
-              <div className="tcard-author">
-                <div
-                  className={`tcard-avatar ${t.avatarColor === "red" ? "tcard-avatar-red" : ""}`}
-                  style={{ position: "relative", overflow: "hidden" }}
-                >
-                  <Image
-                    src="/brandSays/brands1.JPG"
-                    alt={t.name}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    unoptimized
-                  />
+            <div className="flex items-center gap-4">
+              <div
+                className={`w-11 h-11 rounded-full flex items-center justify-center [font-family:var(--serif)] text-[13px] font-bold tracking-[0.04em] shrink-0 relative overflow-hidden ${
+                  t.avatarColor === "red"
+                    ? "bg-(--red) text-(--cream)"
+                    : "bg-(--sand-3) text-(--ink)"
+                }`}
+              >
+                <Image
+                  src="/brandSays/brands1.JPG"
+                  alt={t.name}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
+              </div>
+              <div>
+                <div className="[font-family:var(--serif)] text-sm font-bold tracking-[-0.01em] uppercase text-(--ink)">
+                  {t.name}
                 </div>
-                <div>
-                  <div className="tcard-name">{t.name}</div>
-                  <div className="tcard-role">{t.role}</div>
+                <div className="text-[11px] tracking-[0.08em] text-(--ink-lt) mt-0.75">
+                  {t.role}
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-    </>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }

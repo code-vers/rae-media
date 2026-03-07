@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function creatorTestimonials() {
+export default function CreatorTestimonials() {
   const creatorTestimonials = [
     {
       quote:
@@ -26,104 +26,62 @@ export default function creatorTestimonials() {
   ];
 
   return (
-    <>
-      {/* CREATOR TESTIMONIALS */}
-      <section
-        className="testimonials-section testimonials-dark"
-        id="creators-say"
-        style={{ position: "relative", overflow: "hidden", borderTop: "none" }}
-      >
-        <div
-          className="t-bg-img"
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage:
-              "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAJElEQVR42mP8z8AARAyMQAiMRxk1cNTAUQNHDRw1cNTAUQMHAPfOIf6u2X1eAAAAAElFTkSuQmCC')",
-            backgroundSize: "20px 20px",
-            backgroundRepeat: "repeat",
-            opacity: 0.15,
-            zIndex: 0,
-          }}
-        ></div>
+    <section
+      id="creators-say"
+      className="py-22 px-12 bg-(--ink) relative overflow-hidden"
+    >
+      <div
+        className="absolute inset-0 bg-repeat opacity-15 z-0"
+        style={{
+          backgroundImage:
+            "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAJElEQVR42mP8z8AARAyMQAiMRxk1cNTAUQNHDRw1cNTAUQMHAPfOIf6u2X1eAAAAAElFTkSuQmCC')",
+          backgroundSize: "20px 20px",
+        }}
+      />
 
-        <div style={{ position: "relative", zIndex: 1 }}>
-          <div className="testimonials-header">
-            <div
-              style={{
-                fontSize: "12px",
-                letterSpacing: ".2em",
-                textTransform: "uppercase",
-                color: "#D63A5D",
-                fontWeight: 600,
-                marginBottom: "16px",
-              }}
-            >
-              Creator Testimonials
-            </div>
-            <h2
-              className="testimonials-h2"
-              style={{
-                fontFamily: "var(--serif)",
-                fontSize: "clamp(40px,5vw,72px)",
-                fontWeight: 700,
-                lineHeight: 0.88,
-                letterSpacing: "-.03em",
-                textTransform: "uppercase",
-                color: "#F5F2EC", // cream
-                marginTop: "12px",
-              }}
-            >
-              And our
-              <br />
-              <em>creators</em> too.
-            </h2>
+      <div className="relative z-1">
+        <div className="mb-16">
+          <div className="text-xs tracking-[0.2em] uppercase text-(--red) font-semibold mb-4">
+            Creator Testimonials
           </div>
+          <h2 className="[font-family:var(--serif)] text-[clamp(40px,5vw,72px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-(--cream) mt-3">
+            And our
+            <br />
+            <em className="not-italic text-(--red)">creators</em> too.
+          </h2>
+        </div>
 
-          <div className="testimonials-grid photo-grid">
-            {creatorTestimonials.map((t, idx) => (
-              <div
-                key={idx}
-                className="tcard-photo"
-                style={{ position: "relative", flex: 1 }}
-              >
-                <Image
-                  src={t.imgSrc}
-                  alt={t.name}
-                  fill
-                  unoptimized
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center top",
-                  }}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="tcard-photo-overlay" style={{ zIndex: 2 }}>
-                  <div className="tcard-quote" style={{ marginBottom: "20px" }}>
-                    {t.quote}
+        <div className="flex gap-4 items-stretch">
+          {creatorTestimonials.map((t, idx) => (
+            <div
+              key={idx}
+              className="relative flex-1 overflow-hidden rounded aspect-3/4 group"
+            >
+              <Image
+                src={t.imgSrc}
+                alt={t.name}
+                fill
+                unoptimized
+                className="object-cover object-top brightness-[0.6] saturate-[0.8] transition-transform duration-700 group-hover:scale-[1.04]"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 flex flex-col justify-end p-9 bg-linear-to-t from-black/75 to-transparent z-2">
+                <div className="[font-family:var(--sans)] text-[13px] leading-[1.7] text-[rgba(245,242,236,0.88)] italic font-light mb-5">
+                  {t.quote}
+                </div>
+                <div>
+                  <div className="[font-family:var(--serif)] text-sm font-bold tracking-[-0.01em] uppercase text-(--cream)">
+                    {t.name}
                   </div>
-                  <div>
-                    <div className="tcard-name" style={{ color: "#F5F2EC" }}>
-                      {t.name}
-                    </div>
-                    <div
-                      className="tcard-role"
-                      style={{
-                        color: "rgba(245,242,236,0.65)",
-                        marginTop: "3px",
-                      }}
-                    >
-                      {t.role}
-                    </div>
+                  <div className="text-[11px] tracking-[0.08em] text-[rgba(245,242,236,0.65)] mt-0.75">
+                    {t.role}
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

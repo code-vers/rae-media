@@ -23,7 +23,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-100 grid grid-cols-[1fr_auto_1fr] items-center px-12 transition-all duration-500 border-b ${
         scrolled 
           ? 'py-3.5 bg-[rgba(245,242,236,0.85)] backdrop-blur-[20px] border-[rgba(26,23,20,0.06)] shadow-[0_1px_40px_rgba(26,23,20,0.06)]' 
-          : 'py-[22px] bg-[rgba(245,242,236,0.35)] backdrop-blur-[20px] saturate-[1.4] border-[rgba(26,23,20,0.06)] shadow-[0_1px_40px_rgba(26,23,20,0.04)]'
+          : 'py-5.5 bg-[rgba(245,242,236,0.35)] backdrop-blur-[20px] saturate-[1.4] border-[rgba(26,23,20,0.06)] shadow-[0_1px_40px_rgba(26,23,20,0.04)]'
       }`}
     >
 
@@ -49,7 +49,7 @@ const Navbar = () => {
         </a>
         <a 
           href="#contact" 
-          className="text-[10px] tracking-[0.18em] uppercase font-medium text-[#f5f2ec] bg-[#d63a5d] px-[22px] py-[9px] hover:bg-[#b32e4d] transition-colors duration-200 no-underline"
+          className="text-[10px] tracking-[0.18em] uppercase font-medium text-[#f5f2ec] bg-[#d63a5d] px-5.5 py-2.25 hover:bg-[#b32e4d] transition-colors duration-200 no-underline"
         >
           Get Started
         </a>

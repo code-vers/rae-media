@@ -83,117 +83,40 @@ const TICKER_ITEMS = [...BRAND_LOGOS, ...BRAND_LOGOS];
 
 export default function Brands() {
   return (
-    <section
-      style={{
-        borderTop: "1px solid var(--border)",
-        background: "var(--cream)",
-        overflow: "hidden",
-      }}
-    >
+    <section className="border-t border-(--border) bg-(--cream) overflow-hidden">
       {/* ── Header label ───────────────────────────────────────────────── */}
-      <div
-        style={{
-          padding: "48px 48px 32px",
-          display: "flex",
-          alignItems: "center",
-          gap: "14px",
-          fontSize: "9px",
-          letterSpacing: ".3em",
-          textTransform: "uppercase",
-          color: "var(--ink-lt)",
-          fontWeight: 400,
-        }}
-      >
-        {/* red dash before label — mirroring .brands-header::before */}
-        <span
-          style={{
-            display: "inline-block",
-            width: "24px",
-            height: "1px",
-            background: "var(--red)",
-            flexShrink: 0,
-          }}
-        />
+      <div className="pt-12 px-12 pb-8 flex items-center gap-3.5 text-[9px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal">
+        <span className="inline-block w-6 h-px bg-(--red) shrink-0" />
         Brands We Work With
       </div>
 
       {/* ── Ticker outer wrapper with fade edges ───────────────────────── */}
-      <div
-        style={{
-          overflow: "hidden",
-          padding: "20px 0 40px",
-          position: "relative",
-        }}
-      >
+      <div className="overflow-hidden pt-5 pb-10 relative">
         {/* Left fade */}
         <div
           aria-hidden="true"
-          style={{
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            width: "120px",
-            background: "linear-gradient(to right, var(--cream), transparent)",
-            zIndex: 2,
-            pointerEvents: "none",
-          }}
+          className="absolute top-0 bottom-0 left-0 w-[120px] bg-linear-to-r from-(--cream) to-transparent z-2 pointer-events-none"
         />
         {/* Right fade */}
         <div
           aria-hidden="true"
-          style={{
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            right: 0,
-            width: "120px",
-            background: "linear-gradient(to left, var(--cream), transparent)",
-            zIndex: 2,
-            pointerEvents: "none",
-          }}
+          className="absolute top-0 bottom-0 right-0 w-[120px] bg-linear-to-l from-(--cream) to-transparent z-2 pointer-events-none"
         />
 
         {/* ── Scrolling track ──────────────────────────────────────────── */}
-        <div
-          className="ticker-track"
-          style={{
-            display: "flex",
-            width: "max-content",
-            alignItems: "center",
-          }}
-        >
+        <div className="ticker-track flex w-max items-center">
           {TICKER_ITEMS.map((brand, idx) => (
             <div
               key={idx}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "0 52px",
-                height: "60px",
-                borderRight: "1px solid var(--border)",
-                flexShrink: 0,
-                userSelect: "none",
-              }}
+              className="flex items-center justify-center px-[52px] h-[60px] border-r border-(--border) shrink-0 select-none"
             >
               <Image
                 src={brand.src}
                 alt={brand.alt}
                 width={120}
                 height={40}
-                style={{
-                  objectFit: "contain",
-                  height: "36px",
-                  width: "auto",
-                  maxWidth: "120px",
-                  /* Desaturate slightly — matches the original CSS filter feel */
-                  filter: "grayscale(30%) opacity(0.75)",
-                  transition: "filter 0.2s",
-                }}
-                /* Only eagerly load the first set; the duplicate is lazy */
+                className="object-contain h-9 w-auto max-w-[120px] grayscale-[30%] opacity-75 transition-[filter] duration-200 hover:grayscale-0 hover:opacity-100"
                 loading={idx < BRAND_LOGOS.length ? "eager" : "lazy"}
-                /* quality 75 is a great balance between sharpness and size */
                 quality={75}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.filter = "grayscale(0%) opacity(1)";
