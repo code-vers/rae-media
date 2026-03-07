@@ -43,7 +43,7 @@ export default function BrandTestimonials() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-3 gap-[2px] bg-(--border)">
+      <div className="grid grid-cols-3 gap-0.5 bg-(--border)">
         {testimonials.map((t, idx) => (
           <div
             key={idx}

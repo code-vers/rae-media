@@ -7,21 +7,21 @@ export default function CreatorTestimonials() {
         "Since partnering with RAE, my channel revenue has tripled. They handle all the inbound so I can just focus on making videos.",
       name: "Brandon Buckingham",
       role: "1.26M Subscribers",
-      imgSrc: "/brandSays/brands1.JPG",
+      imgSrc: "/creators/creators.png",
     },
     {
       quote:
         "The deals they bring are actually relevant to my audience. I've never felt like I had to compromise my content for a sponsorship.",
       name: "The Iced Coffee Hour",
       role: "1.55M Subscribers",
-      imgSrc: "/brandSays/brands1.JPG",
+      imgSrc: "/creators/creators1.png",
     },
     {
       quote:
         "Working with RAE feels like having a true team behind me. They negotiated rates I didn’t even know were possible in my niche.",
       name: "Dark Asia by Megan",
       role: "1.08M Subscribers",
-      imgSrc: "/brandSays/brands1.JPG",
+      imgSrc: "/creators/creators2.png",
     },
   ];
 
