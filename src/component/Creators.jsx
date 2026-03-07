@@ -101,82 +101,31 @@ export default function Creators() {
   return (
     <section
       id="creators"
-      style={{
-        background: "var(--cream)",
-        borderTop: "1px solid var(--border)",
-        padding: "88px 0 88px",
-        overflow: "hidden",
-      }}
+      className="bg-(--cream) border-t border-(--border) py-22 overflow-hidden"
     >
       {/* ── Header ─────────────────────────────────────────────────────── */}
-      <div style={{ padding: "0 48px 48px" }}>
-        <div
-          style={{
-            fontSize: "9px",
-            letterSpacing: ".3em",
-            textTransform: "uppercase",
-            color: "var(--ink-lt)",
-            fontFamily: "var(--sans)",
-            display: "flex",
-            alignItems: "center",
-            gap: "14px",
-            marginBottom: "16px",
-          }}
-        >
-          <span
-            style={{
-              display: "inline-block",
-              width: "24px",
-              height: "1px",
-              background: "var(--red)",
-              flexShrink: 0,
-            }}
-          />
+      <div className="px-12 pb-12">
+        <div className="text-[9px] tracking-[0.3em] uppercase text-(--ink-lt) [font-family:var(--sans)] flex items-center gap-3.5 mb-4">
+          <span className="inline-block w-6 h-px bg-(--red) shrink-0" />
           Our Network
         </div>
 
-        <h2
-          style={{
-            fontFamily: "var(--serif)",
-            fontSize: "clamp(44px, 6vw, 80px)",
-            fontWeight: 700,
-            lineHeight: 0.88,
-            letterSpacing: "-0.03em",
-            textTransform: "uppercase",
-            color: "var(--ink)",
-          }}
-        >
+        <h2 className="[font-family:var(--serif)] text-[clamp(44px,6vw,80px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-(--ink)">
           Meet our
           <br />
-          <em style={{ fontStyle: "normal", color: "var(--red)" }}>creators</em>
+          <em className="not-italic text-(--red)">creators</em>
         </h2>
       </div>
 
       {/* ── Slider Wrapper ─────────────────────────────────────────────── */}
-      <div style={{ position: "relative", padding: "0 48px" }}>
+      <div className="relative px-12">
         {/* Prev Arrow */}
         <button
           onClick={() => goTo(current - 1)}
           disabled={current === 0}
-          style={{
-            position: "absolute",
-            left: "24px", // Placed perfectly so it naturally overlaps padding and the card edge
-            top: "50%",
-            transform: "translateY(-50%)",
-            width: "48px",
-            height: "48px",
-            borderRadius: "50%",
-            background: "white",
-            border: "none",
-            boxShadow: "0 4px 14px rgba(0,0,0,0.15)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: current === 0 ? "default" : "pointer",
-            zIndex: 10,
-            opacity: current === 0 ? 0.35 : 1,
-            transition: "opacity 0.2s, transform 0.2s",
-          }}
+          className={`absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border-none shadow-[0_4px_14px_rgba(0,0,0,0.15)] flex items-center justify-center z-10 transition-[opacity,transform] duration-200 ${
+            current === 0 ? "opacity-35 cursor-default" : "opacity-100 cursor-pointer"
+          }`}
           onMouseEnter={(e) => {
             if (current !== 0)
               e.currentTarget.style.transform = "translateY(-50%) scale(1.05)";
@@ -189,20 +138,8 @@ export default function Creators() {
         </button>
 
         {/* The grouped cards block (rounded corners, no gaps) */}
-        <div
-          style={{
-            borderRadius: "20px",
-            overflow: "hidden",
-            boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
-          }}
-        >
-          <div
-            ref={trackRef}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-            }}
-          >
+        <div className="rounded-[20px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
+          <div ref={trackRef} className="grid grid-cols-3">
             {visibleCards.map((creator, idx) => (
               <CreatorCard key={`${current}-${idx}`} creator={creator} />
             ))}
@@ -212,7 +149,7 @@ export default function Creators() {
                 (_, i) => (
                   <div
                     key={`empty-${i}`}
-                    style={{ background: "var(--sand-3)", aspectRatio: "3/4" }}
+                    className="bg-(--sand-3) aspect-3/4"
                   />
                 ),
               )}
@@ -223,25 +160,9 @@ export default function Creators() {
         <button
           onClick={() => goTo(current + 1)}
           disabled={current === TOTAL_SLIDES - 1}
-          style={{
-            position: "absolute",
-            right: "24px", // Matches left arrow perfectly
-            top: "50%",
-            transform: "translateY(-50%)",
-            width: "48px",
-            height: "48px",
-            borderRadius: "50%",
-            background: "white",
-            border: "none",
-            boxShadow: "0 4px 14px rgba(0,0,0,0.15)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: current === TOTAL_SLIDES - 1 ? "default" : "pointer",
-            zIndex: 10,
-            opacity: current === TOTAL_SLIDES - 1 ? 0.35 : 1,
-            transition: "opacity 0.2s, transform 0.2s",
-          }}
+          className={`absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border-none shadow-[0_4px_14px_rgba(0,0,0,0.15)] flex items-center justify-center z-10 transition-[opacity,transform] duration-200 ${
+            current === TOTAL_SLIDES - 1 ? "opacity-35 cursor-default" : "opacity-100 cursor-pointer"
+          }`}
           onMouseEnter={(e) => {
             if (current !== TOTAL_SLIDES - 1)
               e.currentTarget.style.transform = "translateY(-50%) scale(1.05)";
@@ -260,70 +181,23 @@ export default function Creators() {
 /* ─── Individual creator card ───────────────────────────────────────────── */
 function CreatorCard({ creator }) {
   return (
-    <div
-      style={{
-        position: "relative",
-        overflow: "hidden",
-        background: "var(--sand-3)",
-        aspectRatio: "3/4",
-      }}
-    >
+    <div className="relative overflow-hidden bg-(--sand-3) aspect-3/4">
       <Image
         src={creator.img}
         alt={creator.name}
         fill
         sizes="33vw"
-        style={{
-          objectFit: "cover",
-          objectPosition: "center top",
-          filter: "saturate(0.85) brightness(0.97)",
-          transition: "transform .7s ease, filter .6s ease",
-        }}
+        className="object-cover object-top saturate-[0.85] brightness-[0.97] transition-[transform,filter] duration-700"
         quality={80}
         unoptimized={creator.unoptimized}
       />
 
       {/* ── Always-visible centered info ── */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "32px",
-          background: "rgba(26, 23, 20, 0.45)", // dark overlay for readability
-          zIndex: 2,
-        }}
-      >
-        {/* Creator name (Oswald, 28px, cream) */}
-        <div
-          style={{
-            fontFamily: "var(--serif)",
-            fontSize: "clamp(24px, 2.5vw, 32px)",
-            fontWeight: 700,
-            color: "var(--cream)",
-            textAlign: "center",
-            lineHeight: 1.05,
-            textTransform: "uppercase",
-            letterSpacing: "-0.02em",
-            marginBottom: "10px",
-          }}
-        >
+      <div className="absolute inset-0 flex flex-col justify-center items-center p-8 bg-[rgba(26,23,20,0.45)] z-2">
+        <div className="[font-family:var(--serif)] text-[clamp(24px,2.5vw,32px)] font-bold text-(--cream) text-center leading-[1.05] uppercase tracking-[-0.02em] mb-2.5">
           {creator.name}
         </div>
-
-        {/* Subscriber count (13px, DM Sans, muted cream) */}
-        <div
-          style={{
-            fontSize: "13px",
-            letterSpacing: ".1em",
-            color: "rgba(245,242,236,0.8)",
-            textAlign: "center",
-            fontFamily: "var(--sans)",
-          }}
-        >
+        <div className="text-[13px] tracking-widest text-[rgba(245,242,236,0.8)] text-center [font-family:var(--sans)]">
           {creator.subs}
         </div>
       </div>
