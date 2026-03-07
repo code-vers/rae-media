@@ -95,12 +95,12 @@ export default function Brands() {
         {/* Left fade */}
         <div
           aria-hidden="true"
-          className="absolute top-0 bottom-0 left-0 w-[120px] bg-linear-to-r from-(--cream) to-transparent z-2 pointer-events-none"
+          className="absolute top-0 bottom-0 left-0 w-30 bg-linear-to-r from-(--cream) to-transparent z-2 pointer-events-none"
         />
         {/* Right fade */}
         <div
           aria-hidden="true"
-          className="absolute top-0 bottom-0 right-0 w-[120px] bg-linear-to-l from-(--cream) to-transparent z-2 pointer-events-none"
+          className="absolute top-0 bottom-0 right-0 w-30 bg-linear-to-l from-(--cream) to-transparent z-2 pointer-events-none"
         />
 
         {/* ── Scrolling track ──────────────────────────────────────────── */}
@@ -108,14 +108,14 @@ export default function Brands() {
           {TICKER_ITEMS.map((brand, idx) => (
             <div
               key={idx}
-              className="flex items-center justify-center px-[52px] h-[60px] border-r border-(--border) shrink-0 select-none"
+              className="flex items-center justify-center px-13 h-[15 border-r border-(--border) shrink-0 select-none"
             >
               <Image
                 src={brand.src}
                 alt={brand.alt}
                 width={120}
                 height={40}
-                className="object-contain h-9 w-auto max-w-[120px] grayscale-[30%] opacity-75 transition-[filter] duration-200 hover:grayscale-0 hover:opacity-100"
+                className="object-contain h-9 w-auto max-w-13 grayscale-30 opacity-75 transition-[filter] duration-200 hover:grayscale-0 hover:opacity-100"
                 loading={idx < BRAND_LOGOS.length ? "eager" : "lazy"}
                 quality={75}
                 onMouseEnter={(e) => {
