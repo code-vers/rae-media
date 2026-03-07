@@ -9,9 +9,9 @@ export const metadata = {
 export default function OriginalProgramming() {
   return (
     <main className="bg-(--cream) min-h-screen pt-32 px-5 pb-16 md:pt-40 md:px-8 md:pb-20 lg:pt-48 lg:px-12 lg:pb-25">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-24 items-start">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 lg:gap-24 items-start">
         {/* ── Left Column (Header Section) ────────────────────────────────────────────── */}
-        <div className="w-full md:w-1/2 lg:w-5/12 md:sticky md:top-36">
+        <div className="md:col-span-6 xl:col-span-5 md:sticky md:top-36">
           {/* Eyebrow Label */}
           <div className="flex items-center gap-3.5 text-[10px] md:text-[9px] tracking-[0.3em] uppercase text-(--red) font-normal mb-6 md:mb-8">
             <span className="w-6 h-px bg-(--red) shrink-0" />
@@ -19,7 +19,7 @@ export default function OriginalProgramming() {
           </div>
 
           {/* Heading */}
-          <h1 className="[font-family:var(--serif)] text-[clamp(44px,11vw,104px)] md:text-[clamp(56px,6.5vw,104px)] font-bold leading-normal md:leading-[0.88] tracking-[-0.03em] uppercase text-(--ink) mb-6 md:mb-10">
+          <h1 className="[font-family:var(--serif)] text-[clamp(44px,11vw,84px)] md:text-[clamp(56px,5.5vw,88px)] xl:text-[clamp(56px,5vw,84px)] font-bold leading-[1] md:leading-[0.88] tracking-[-0.03em] uppercase text-(--ink) mb-6 md:mb-10">
             Original
             <br />
             <em className="not-italic text-(--red)">Programming</em>
@@ -33,14 +33,14 @@ export default function OriginalProgramming() {
         </div>
 
         {/* ── Right Column (Shows Lineup) ────────────────────────────────────────── */}
-        <div className="w-full md:w-1/2 lg:w-7/12 flex flex-col gap-8 md:gap-12 mt-4 md:mt-0">
+        <div className="md:col-span-6 xl:col-span-7 flex flex-col gap-8 md:gap-12 mt-4 md:mt-0">
           {/* Show Card: Bodycam Blowups */}
           <a
             href="#" // Placeholder link
             className="group block no-underline transition-all duration-300 transform hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] bg-white rounded-[16px] md:rounded-[20px] overflow-hidden border border-(--border)"
           >
             {/* Image Container (Aspect Video) */}
-            <div className="aspect-[16/9] bg-[rgba(26,23,20,0.03)] relative overflow-hidden flex items-center justify-center border-b border-(--border)">
+            <div className="aspect-video bg-[rgba(26,23,20,0.03)] relative overflow-hidden flex items-center justify-center border-b border-(--border)">
               <div className="text-[10px] tracking-[0.2em] uppercase text-(--ink-lt) [font-family:var(--sans)] font-medium">
                 [ Placeholder Image ]
               </div>

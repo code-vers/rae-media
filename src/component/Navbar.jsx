@@ -110,17 +110,17 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             <span
-              className={`block h-[1.5px] bg-[var(--ink-mid,#3a3530)] transition-all duration-300 origin-center ${
+              className={`block h-[1.5px] bg-(--ink-mid,#3a3530) transition-all duration-300 origin-center ${
                 menuOpen ? "w-5 rotate-45 translate-y-[6.5px]" : "w-5"
               }`}
             />
             <span
-              className={`block h-[1.5px] bg-[var(--ink-mid,#3a3530)] transition-all duration-300 ${
+              className={`block h-[1.5px] bg-(--ink-mid,#3a3530) transition-all duration-300 ${
                 menuOpen ? "w-0 opacity-0" : "w-5 opacity-100"
               }`}
             />
             <span
-              className={`block h-[1.5px] bg-[var(--ink-mid,#3a3530)] transition-all duration-300 origin-center ${
+              className={`block h-[1.5px] bg-(--ink-mid,#3a3530) transition-all duration-300 origin-center ${
                 menuOpen ? "w-5 -rotate-45 -translate-y-[6.5px]" : "w-5"
               }`}
             />
