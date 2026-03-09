@@ -160,10 +160,10 @@ export default function Creators() {
           }`}
           onMouseEnter={(e) => {
             if (current !== 0)
-              e.currentTarget.style.transform = "translateY(-50%) scale(1.05)";
+              e.currentTarget.style.transform = "";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateY(-50%) scale(1)";
+            e.currentTarget.style.transform = "";
           }}
         >
           <Chevron direction="prev" />
@@ -199,10 +199,10 @@ export default function Creators() {
           }`}
           onMouseEnter={(e) => {
             if (current !== totalSlides - 1)
-              e.currentTarget.style.transform = "translateY(-50%) scale(1.05)";
+              e.currentTarget.style.transform = "";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateY(-50%) scale(1)";
+            e.currentTarget.style.transform = "";
           }}
         >
           <Chevron direction="next" />
