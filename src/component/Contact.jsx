@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="grid grid-cols-1 lg:grid-cols-2 border-t border-(--border) min-h-[78vh]"
+      className="grid grid-cols-1 p-t lg:grid-cols-2 min-h-screen border-t border-(--border) "
     >
       {/* ── Left Column ────────────────────────────────────────────────── */}
       <div className="bg-(--sand) py-12 px-5 md:py-16 md:px-8 lg:py-22 lg:px-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-(--border)">
