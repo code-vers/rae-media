@@ -59,33 +59,34 @@ const Navbar = () => {
           </a>
 
           {/* Center Text */}
-          <span className="text-[9px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal whitespace-nowrap">
+          <span className="text-[12px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal whitespace-nowrap">
             {/* YouTube Creator Agency */}
+            Youtube Creator Agency
           </span>
 
           {/* Navigation */}
           <nav className="flex items-center justify-end gap-9">
-            <a
+            {/* <a
               href="/"
-              className="text-[10px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+              className="text-[14px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
             >
               Home
-            </a>
+            </a> */}
             <a
               href="/contact"
-              className="text-[10px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+              className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
             >
               Contact
             </a>
             <a
               href="/team"
-              className="text-[10px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+              className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
             >
               Team
             </a>
             <a
               href="/original-programming"
-              className="text-[10px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+              className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
             >
               Original Programming
             </a>
