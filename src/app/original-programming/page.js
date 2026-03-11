@@ -9,9 +9,9 @@ export const metadata = {
 export default function OriginalProgramming() {
   return (
     <main className="bg-(--cream) min-h-screen pt-32 px-5 pb-16 md:pt-40 md:px-8 md:pb-20 lg:pt-48 lg:px-12 lg:pb-25">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 lg:gap-24 items-start">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 xl:gap-24 items-start">
         {/* ── Left Column (Header Section) ────────────────────────────────────────────── */}
-        <div className="md:col-span-6 xl:col-span-5 md:sticky md:top-36">
+        <div className="lg:col-span-6 xl:col-span-7 lg:sticky lg:top-36 min-w-0">
           {/* Eyebrow Label */}
           <div className="flex items-center gap-3.5 text-[10px] md:text-[9px] tracking-[0.3em] uppercase text-(--red) font-normal mb-6 md:mb-8">
             <span className="w-6 h-px bg-(--red) shrink-0" />
@@ -19,21 +19,21 @@ export default function OriginalProgramming() {
           </div>
 
           {/* Heading */}
-          <h1 className="[font-family:var(--serif)] text-[clamp(44px,11vw,84px)] md:text-[clamp(56px,5.5vw,88px)] xl:text-[clamp(56px,5vw,84px)] font-bold leading-none md:leading-[0.88] tracking-[-0.03em] uppercase text-(--ink) mb-6 md:mb-10">
+          <h1 className="[font-family:var(--serif)] text-[clamp(48px,12vw,110px)] lg:text-[clamp(44px,5vw,76px)] xl:text-[clamp(56px,6.5vw,110px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase mt-4 md:mt-6 mb-12 lg:mb-0">
             Original
             <br />
-            <em className="not-italic text-(--red)">Programming</em>
+            <em className="not-italic text-(--red)">Programming.</em>
           </h1>
 
           {/* Description */}
-          <p className="[font-family:var(--body-serif)] text-[15px] md:text-[16px] leading-[1.8] md:leading-[1.9] text-(--ink-mid) font-normal">
+          <p className="[font-family:var(--body-serif)] text-[15px] md:text-[16px] leading-[1.8] md:leading-[1.9] text-(--ink-mid) font-normal mt-4 md:mt-8">
             Beyond partnerships, RAE Media develops and produces original
             Youtube shows.
           </p>
         </div>
 
         {/* ── Right Column (Shows Lineup) ────────────────────────────────────────── */}
-        <div className="md:col-span-6 xl:col-span-7 flex flex-col gap-8 md:gap-12 mt-4 md:mt-0">
+        <div className="lg:col-span-6 xl:col-span-5 flex flex-col gap-8 mt-2 lg:mt-0 min-w-0">
           {/* Show Card: Bodycam Blowups */}
           <a
             href="#" // Placeholder link
