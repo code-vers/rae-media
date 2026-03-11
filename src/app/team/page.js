@@ -32,30 +32,41 @@ const teamMembers = [
 
 export default function Team() {
   return (
-    <main className="bg-(--cream) min-h-screen pt-20 px-5 pb-16 md:pt-24 md:px-8 md:pb-20 lg:pt-32 lg:px-12 lg:pb-32">
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
+    <main className="bg-(--cream) min-h-screen pt-32 px-5 pb-16 md:pt-40 md:px-8 md:pb-20 lg:pt-48 lg:px-12 lg:pb-25">
+      <div className="max-w-7xl mx-auto">
         {/* ── Header Section ────────────────────────────────────────────── */}
-        <div className="mb-8 md:mb-12 lg:mb-16 text-center">
+        <div className="mb-12 md:mb-16 lg:mb-20">
+          {/* Eyebrow Label */}
+          <div className="flex items-center gap-3.5 text-[10px] md:text-[9px] tracking-[0.3em] uppercase text-(--red) font-normal mb-6 md:mb-8">
+            <span className="w-6 h-px bg-(--red) shrink-0" />
+            ABOUT US
+          </div>
+
           {/* Heading */}
-          <h1 className="[font-family:var(--serif)] text-[clamp(44px,11vw,84px)] md:text-[clamp(56px,7vw,104px)] font-bold leading-none md:leading-[0.88] tracking-[-0.03em] uppercase text-(--ink)">
+          <h1 className="[font-family:var(--serif)] text-[clamp(48px,12vw,110px)] lg:text-[clamp(52px,8vw,110px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-(--ink) mb-6 md:mb-8">
             Meet the
             <br />
-            <em className="not-italic text-(--red)">Team</em>
+            <em className="not-italic text-(--red)">Team.</em>
           </h1>
+
+          {/* Description */}
+          <p className="[font-family:var(--body-serif)] text-[15px] md:text-[16px] leading-[1.8] md:leading-[1.9] text-(--ink-mid) font-normal max-w-2xl">
+            We are a team of dedicated strategists, managers, and coordinators committed to executing campaigns that actually work.
+          </p>
         </div>
 
         {/* ── Team Grid ────────────────────────────────────────── */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8 md:gap-y-16 md:gap-x-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-12 gap-x-6 md:gap-y-16 md:gap-x-8">
           {teamMembers.map((member, idx) => (
             <div
               key={idx}
-              className="group flex flex-col items-center text-center"
+              className="group flex flex-col items-start text-left"
             >
               {/* Image Container */}
-              <div className="w-full aspect-4/5 bg-[rgba(26,23,20,0.03)] relative overflow-hidden mb-5 md:mb-6 rounded-[12px] md:rounded-[16px] border border-(--border)">
+              <div className="w-full aspect-4/5 bg-[rgba(26,23,20,0.03)] relative overflow-hidden mb-5 rounded-[12px] border border-(--border)">
                 {member.placeholder ? (
-                  <div className="absolute inset-0 flex items-center justify-center text-[10px] tracking-[0.2em] uppercase text-(--ink-lt) [font-family:var(--sans)] font-medium">
-                    [ Placeholder Image ]
+                  <div className="absolute inset-0 flex items-center justify-center text-[10px] tracking-[0.2em] uppercase text-(--ink-lt) [font-family:var(--sans)] font-medium px-4 text-center">
+                    [ TBD ]
                   </div>
                 ) : (
                   <Image
@@ -69,10 +80,10 @@ export default function Team() {
               </div>
 
               {/* Member Details */}
-              <h3 className="[font-family:var(--serif)] text-[22px] md:text-[24px] font-bold text-(--ink) uppercase tracking-[-0.02em] leading-tight transition-colors duration-300 group-hover:text-(--red)">
+              <h3 className="[font-family:var(--serif)] text-[18px] md:text-[20px] font-bold text-(--ink) uppercase tracking-[-0.02em] leading-tight transition-colors duration-300 group-hover:text-(--red)">
                 {member.name}
               </h3>
-              <div className="text-[11px] md:text-xs tracking-winest uppercase text-(--ink-mid) font-medium mt-1.5 opacity-80">
+              <div className="text-[10px] md:text-[11px] tracking-widest uppercase text-(--ink-mid) font-medium mt-1.5 opacity-80">
                 {member.role}
               </div>
             </div>

@@ -43,12 +43,12 @@ const Navbar = () => {
       >
         {/* Desktop Navbar */}
         <div
-          className={`hidden md:grid grid-cols-[1fr_auto_1fr] items-center px-12 transition-[padding] duration-500 ${
+          className={`hidden md:flex items-center justify-between px-5 lg:px-12 transition-[padding] duration-500 gap-4 lg:gap-8 w-full ${
             scrolled ? "py-3.5" : "py-5.5"
           }`}
         >
           {/* Logo */}
-          <a href="#" className="no-underline">
+          <a href="/" className="no-underline shrink-0 flex-none">
             <Image
               src={logo}
               alt="RAE"
@@ -59,40 +59,33 @@ const Navbar = () => {
           </a>
 
           {/* Center Text */}
-          <span className="text-[12px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal whitespace-nowrap">
-            {/* YouTube Creator Agency */}
+          <span className="flex-1 text-center text-[12px] tracking-[0.2em] xl:tracking-[0.3em] uppercase text-(--ink-lt) font-normal whitespace-nowrap overflow-hidden text-ellipsis px-2 lg:px-4">
             Youtube Creator Agency
           </span>
 
           {/* Navigation */}
-          <nav className="flex items-center justify-end gap-9">
-            {/* <a
-              href="/"
-              className="text-[14px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
-            >
-              Home
-            </a> */}
+          <nav className="flex items-center justify-end gap-5 lg:gap-9 shrink-0 flex-none">
             <a
               href="/contact"
-              className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+              className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200 whitespace-nowrap"
             >
               Contact
             </a>
             <a
               href="/team"
-              className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+              className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200 whitespace-nowrap"
             >
               Team
             </a>
             <a
               href="/original-programming"
-              className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+              className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200 whitespace-nowrap"
             >
               Original Programming
             </a>
             <a
               href="/contact"
-              className="text-[10px] tracking-[0.18em] uppercase font-medium text-(--cream) bg-(--red) px-5.5 py-2.25 hover:bg-(--red-dk) transition-colors duration-200 no-underline"
+              className="text-[10px] tracking-[0.18em] uppercase font-medium text-(--cream) bg-(--red) px-4 py-2 lg:px-5.5 lg:py-2.25 hover:bg-(--red-dk) transition-colors duration-200 no-underline whitespace-nowrap"
             >
               Get Started
             </a>

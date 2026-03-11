@@ -159,8 +159,7 @@ export default function Creators() {
               : "opacity-100 cursor-pointer"
           }`}
           onMouseEnter={(e) => {
-            if (current !== 0)
-              e.currentTarget.style.transform = "";
+            if (current !== 0) e.currentTarget.style.transform = "";
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = "";
