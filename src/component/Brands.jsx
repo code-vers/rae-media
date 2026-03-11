@@ -105,31 +105,31 @@ export default function Brands() {
 
         {/* ── Scrolling track ──────────────────────────────────────────── */}
         <div className="ticker-track flex w-max items-center">
-          {TICKER_ITEMS.map((brand, idx) => (
-            <div
-              key={idx}
-              className="flex items-center justify-center px-6 md:px-9 lg:px-13 h-[40px] md:h-[50px] lg:h-[60px] border-r border-(--border) shrink-0 select-none"
-            >
-              <Image
-                src={brand.src}
-                alt={brand.alt}
-                width={120}
-                height={40}
-                className="object-contain h-6 md:h-7 lg:h-9 w-auto max-w-10 md:max-w-11 lg:max-w-13 grayscale-30 opacity-75 transition-[filter] duration-200 hover:grayscale-0 hover:opacity-100"
-                loading={idx < BRAND_LOGOS.length ? "eager" : "lazy"}
-                quality={75}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.filter = "grayscale(0%) opacity(1)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.filter = "grayscale(30%) opacity(0.75)";
-                }}
-                unoptimized={
-                  brand.src.endsWith(".svg") || brand.src.endsWith(".avif")
-                }
-              />
-            </div>
-          ))}
+     {TICKER_ITEMS.map((brand, idx) => (
+  <div
+    key={idx}
+    className="flex items-center justify-center px-3 md:px-4 lg:px-5 h-[60px] md:h-[80px] lg:h-[100px] border-r border-(--border) shrink-0 select-none"
+  >
+    <Image
+      src={brand.src}
+      alt={brand.alt}
+      width={240}
+      height={80}
+      className="object-contain h-12 md:h-14 lg:h-18 w-auto max-w-20 md:max-w-24 lg:max-w-28 grayscale-30 opacity-75 transition-[filter] duration-200 hover:grayscale-0 hover:opacity-100"
+      loading={idx < BRAND_LOGOS.length ? "eager" : "lazy"}
+      quality={75}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.filter = "grayscale(0%) opacity(1)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.filter = "grayscale(30%) opacity(0.75)";
+      }}
+      unoptimized={
+        brand.src.endsWith(".svg") || brand.src.endsWith(".avif")
+      }
+    />
+  </div>
+))}
         </div>
       </div>
     </section>

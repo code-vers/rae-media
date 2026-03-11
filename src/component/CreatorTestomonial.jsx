@@ -46,12 +46,12 @@ export default function CreatorTestimonials() {
           </div>
 
           <h2 className="[font-family:var(--serif)] text-[clamp(40px,5vw,72px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-(--cream)">
-            And our
+       HERE’S WHAT OUR 
             <br />
             <span className="text-(--red) [font-family:var(--serif)]">
-              creators
+           CREATORS
             </span>{" "}
-            too.
+        SAY.
           </h2>
         </div>
 

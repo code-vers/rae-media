@@ -14,24 +14,22 @@ const Banner = () => {
 
         {/* Heading */}
         <h2 className="[font-family:var(--serif)] text-[clamp(44px,11vw,104px)] md:text-[clamp(56px,6.5vw,104px)] font-bold leading-normal md:leading-[0.88] tracking-[-0.03em] uppercase text-(--ink)">
-          We engineer
-          <br />
-          campaigns that
-          <br />
-          <em className="not-italic text-(--red)">actually</em> work.
+YOUTUBE’S  
+       
+          <em className="not-italic text-(--red)">PREMIER </em>AD. AGENCY
         </h2>
 
         {/* Buttons */}
         <div className="flex  gap-4 mt-2">
           <a
             href="#contact"
-            className="[font-family:var(--sans)] text-[13px] tracking-[0.04em] font-semibold py-4 md:py-4.5 px-8 md:px-12 text-center no-underline inline-block transition-all duration-280 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[60px] border-2 border-(--red) bg-(--red) text-(--cream) hover:bg-(--red-dk) hover:border-(--red-dk) hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(232,33,90,0.35)]"
+            className="[font-family:var(--sans)] text-[13px] uppercase tracking-[0.04em] font-semibold py-4 md:py-4.5 px-8 md:px-12 text-center no-underline inline-block transition-all duration-280 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[60px] border-2 border-(--red) bg-(--red) text-(--cream) hover:bg-(--red-dk) hover:border-(--red-dk) hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(232,33,90,0.35)]"
           >
             I&rsquo;m a Brand
           </a>
           <a
             href="#creators"
-            className="[font-family:var(--sans)] text-[13px] tracking-[0.04em] font-semibold py-4 md:py-4.5 px-8 md:px-12 text-center no-underline inline-block transition-all duration-280 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[60px] border-2 border-(--red) bg-transparent text-(--red) hover:bg-(--red) hover:text-(--cream) hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(232,33,90,0.25)]"
+            className="[font-family:var(--sans)] uppercase text-[13px] tracking-[0.04em] font-semibold py-4 md:py-4.5 px-8 md:px-12 text-center no-underline inline-block transition-all duration-280 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[60px] border-2 border-(--red) bg-transparent text-(--red) hover:bg-(--red) hover:text-(--cream) hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(232,33,90,0.25)]"
           >
             I&rsquo;m a Creator
           </a>
@@ -41,10 +39,7 @@ const Banner = () => {
       {/* Right Column */}
       <div className="flex flex-col gap-6 md:gap-10 justify-center">
         <p className="[font-family:var(--body-serif)] text-[14px] md:text-[15px] leading-[1.8] md:leading-[1.9] text-(--ink-mid) font-normal">
-          RAE Media connects ambitious brands with the right YouTube creators —
-          not just anyone with a following, but the right voice for your
-          audience. We handle every part of the partnership so your campaign
-          feels native, performs measurably, and lasts beyond the upload.
+    We match brands with Youtube’s top converting talent to execute campaigns that actually work
         </p>
       </div>
     </section>

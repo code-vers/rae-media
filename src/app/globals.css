@@ -46,7 +46,8 @@
     --ink: #1a1714;
     --ink-mid: #4a4540;
     --ink-lt: #7a7268;
-    --red: #e8215a;
+    /* update red color */
+    --red: #F1184F;  
     --red-dk: #c41a4a;
     --border: rgba(26, 23, 20, 0.1);
     --serif: "Oswald", "Arial Narrow", sans-serif;

@@ -143,7 +143,7 @@ export default function Creators() {
         <h2 className="[font-family:var(--serif)] text-[clamp(36px,6vw,80px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-(--ink)">
           Meet our
           <br />
-          <em className="not-italic text-(--red)">creators</em>
+          <em className="not-italic text-(--red)">creators.</em>
         </h2>
       </div>
 
