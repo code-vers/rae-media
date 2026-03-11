@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function OriginalProgramming() {
   return (
-    <main className="bg-(--cream) min-h-screen pt-32 px-5 pb-16 md:pt-40 md:px-8 md:pb-20 lg:pt-48 lg:px-12 lg:pb-25">
+    <main className="bg-(--cream) min-h-[80vh] pt-32 px-5 pb-16 md:pt-40 md:px-8 md:pb-20 lg:pt-48 lg:px-12 lg:pb-25">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 xl:gap-24 items-start">
         {/* ── Left Column (Header Section) ────────────────────────────────────────────── */}
         <div className="lg:col-span-6 xl:col-span-7 lg:sticky lg:top-36 min-w-0">
