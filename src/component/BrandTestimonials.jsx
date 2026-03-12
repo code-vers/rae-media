@@ -1,21 +1,25 @@
 import Image from "next/image";
+import image from '../../public/testomonial/image.jpeg';
+import image1 from '../../public/testomonial/image1.jpeg';
 
 export default function BrandTestimonials() {
   const testimonials = [
     {
       quote:
-        "No one l've ever worked with in the podcasting business works as hard as Sam and the RAE Media team. They constantly deliver amazing opportunities for our brands, and are a pleasure to work with in any way.” - Ilyas Frenkel, Founder Single Source Media",
+        "Sam is the ultimate hustler and determined to get the very best deals. He is always grinding – and at his core a respectful, amazing advocate who has his client’s best interest at heart",
       initials: "IF",
-      name: "Ilyas Frenkel",
-      role: "Founder — Single Source Media",
+      name: "Brian Entin",
+      role: "Senior National Correspondent NewsNation",
       avatarColor: "red",
+      image:image
     },
     {
       quote:
-        "Please use placeholder quote for now. Please use placeholder quote for now. Please use placeholder quote for now.” - John Doe, Marketing Manager",
+        "I have known Sam Goldberg many years.  He is not a guy who is afraid to ask for the order.  Today that is a rare, but essential trait",
       initials: "JD",
-      name: "John Doe",
-      role: "Marketing Manager",
+      name: "Michael Smerconish",
+      role: "SiriusXM Host + TV Correspondent",
+      image:image1
     },
     {
       quote:
@@ -32,6 +36,7 @@ export default function BrandTestimonials() {
       id="brands-say"
       className="py-12 px-5 md:py-16 md:px-8 lg:py-22 lg:px-12 bg-(--cream) border-t border-(--border)"
     >
+
       <div className="mb-8 md:mb-12 lg:mb-16">
           <div className="flex items-center gap-3.5 text-[10px] md:text-[9px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal mb-6 md:mb-8">
             <span className="w-6 h-px bg-(--red) shrink-0" />
@@ -65,7 +70,7 @@ export default function BrandTestimonials() {
                 }`}
               >
                 <Image
-                  src="/brandSays/brands1.JPG"
+                  src={t?.image || '/brandSays/brands1.JPG'}
                   alt={t.name}
                   fill
                   className="object-cover"
