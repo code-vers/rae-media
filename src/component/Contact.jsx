@@ -24,7 +24,7 @@ const Contact = () => {
           setIsLoading(false);
           setShowSuccess(true);
           formRef.current.reset();
-          
+
           // Auto-hide success message after 5 seconds
           setTimeout(() => {
             setShowSuccess(false);
@@ -62,7 +62,7 @@ const Contact = () => {
             <br />
             <em className="not-italic text-(--red)">call.</em>
           </h2>
-          
+
           {/* Book Now Button */}
           <button
             onClick={handleBookCall}
@@ -90,7 +90,7 @@ const Contact = () => {
       >
         {/* Custom Success Message */}
         {showSuccess && (
-          <div className="absolute top-28 right-4 md:top-28 md:right-6 bg-(--red) text-(--cream) px-4 py-3 text-[11px] md:text-[10px] tracking-[0.1em] uppercase font-medium animate-fade-in">
+          <div className="absolute top-28 right-4 md:top-28 md:right-6 bg-(--red) text-(--cream) px-4 py-3 text-[11px] md:text-[10px] tracking-widset uppercase font-medium animate-fade-in">
             Message sent successfully ✓
           </div>
         )}

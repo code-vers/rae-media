@@ -108,7 +108,7 @@ export default function Brands() {
      {TICKER_ITEMS.map((brand, idx) => (
   <div
     key={idx}
-    className="flex items-center justify-center px-3 md:px-4 lg:px-5 h-[60px] md:h-[80px] lg:h-[100px] border-r border-(--border) shrink-0 select-none"
+    className="flex items-center justify-center px-3 md:px-4 lg:px-5 h-15 md:h-20 lg:h-25 border-r border-(--border) shrink-0 select-none"
   >
     <Image
       src={brand.src}
