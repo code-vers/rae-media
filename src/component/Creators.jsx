@@ -169,7 +169,7 @@ export default function Creators() {
         </button>
 
         {/* The sliding track */}
-        <div className="rounded-[12px] md:rounded-[16px] lg:rounded-[20px] overflow-hidden shadow-[0_10px_25px_rgba(0,0,0,0.15)] md:shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
+        <div className="rounded-xl md:rounded-2xl lg:rounded-[20px] overflow-hidden shadow-[0_10px_25px_rgba(0,0,0,0.15)] md:shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
           <div
             ref={trackRef}
             className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
