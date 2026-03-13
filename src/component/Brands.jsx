@@ -85,9 +85,9 @@ export default function Brands() {
   return (
     <section className="border-t border-(--border) bg-(--cream) overflow-hidden">
       {/* ── Header label ───────────────────────────────────────────────── */}
-      <div className="pt-8 px-5 pb-5 md:pt-10 md:px-8 md:pb-6 lg:pt-12 lg:px-12 lg:pb-8 flex items-center gap-3.5 text-[9px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal">
-        <span className="inline-block w-6 h-px bg-(--red) shrink-0" />
-        Brands We Work With
+      <div className="pt-10 px-5 pb-5 md:pt-10 md:px-8 md:pb-6 lg:pt-12 lg:px-12 lg:pb-8 flex items-center gap-3.5 text-[12px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal">
+        <span className="inline-block w-6  h-px bg-(--red) shrink-0" />
+      TRUSTED BY 100+ BRANDS
       </div>
 
       {/* ── Ticker outer wrapper with fade edges ───────────────────────── */}
@@ -113,9 +113,9 @@ export default function Brands() {
     <Image
       src={brand.src}
       alt={brand.alt}
-      width={240}
-      height={80}
-      className="object-contain h-12 md:h-14 lg:h-18 w-auto max-w-20 md:max-w-24 lg:max-w-28 grayscale-30 opacity-75 transition-[filter] duration-200 hover:grayscale-0 hover:opacity-100"
+      width={280}
+      height={120}
+      className="object-contain h-12 md:h-16 lg:h-24 w-auto max-w-20 md:max-w-28 lg:max-w-48 grayscale-30 opacity-75 transition-[filter] duration-200 hover:grayscale-0 hover:opacity-100"
       loading={idx < BRAND_LOGOS.length ? "eager" : "lazy"}
       quality={75}
       onMouseEnter={(e) => {

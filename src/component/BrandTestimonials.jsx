@@ -38,7 +38,7 @@ export default function BrandTestimonials() {
     >
 
       <div className="mb-8 md:mb-12 lg:mb-16">
-          <div className="flex items-center gap-3.5 text-[10px] md:text-[9px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal mb-6 md:mb-8">
+          <div className="flex items-center gap-3.5 text-[10px] md:text-[12px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal mb-6 md:mb-8">
             <span className="w-6 h-px bg-(--red) shrink-0" />
             Brand Testimonials
           </div>
@@ -63,19 +63,26 @@ export default function BrandTestimonials() {
 
             <div className="flex items-center gap-3 md:gap-4">
               <div
-                className={`w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center [font-family:var(--serif)] text-[12px] md:text-[13px] font-bold tracking-[0.04em] shrink-0 relative overflow-hidden ${
+                className={`w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center shrink-0 relative overflow-hidden ${
                   t.avatarColor === "red"
                     ? "bg-(--red) text-(--cream)"
                     : "bg-(--sand-3) text-(--ink)"
                 }`}
               >
-                <Image
-                  src={t?.image || '/brandSays/brands1.JPG'}
-                  alt={t.name}
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
+                {t.image ? (
+                  <Image
+                    src={t.image}
+                    alt={t.name}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 64px, (max-width: 1024px) 80px, 96px"
+                    unoptimized
+                  />
+                ) : (
+                  <span className="[font-family:var(--serif)] text-sm md:text-base lg:text-lg font-bold tracking-[0.04em]">
+                    {t.initials}
+                  </span>
+                )}
               </div>
               <div>
                 <div className="[font-family:var(--serif)] text-sm font-bold tracking-[-0.01em] uppercase text-(--ink)">

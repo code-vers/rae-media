@@ -52,16 +52,16 @@ const Navbar = () => {
             <Image
               src={logo}
               alt="RAE"
-              height={200}
-              width={200}
-              className="h-8 w-auto block"
+              height={250}
+              width={250}
+              className="h-12 w-auto block"
             />
           </a>
 
           {/* Center Text */}
-          <span className="flex-1 text-center text-[12px] tracking-[0.2em] xl:tracking-[0.3em] uppercase text-(--ink-lt) font-normal whitespace-nowrap overflow-hidden text-ellipsis px-2 lg:px-4">
+          {/* <span className="flex-1  text-center text-[12px] tracking-[0.2em] xl:tracking-[0.3em] uppercase text-(--ink-lt) font-normal whitespace-nowrap overflow-hidden text-ellipsis px-2 lg:px-4">
             Youtube Creator Agency
-          </span>
+          </span> */}
 
           {/* Navigation */}
           <nav className="flex items-center justify-end gap-5 lg:gap-9 shrink-0 flex-none">
@@ -85,7 +85,7 @@ const Navbar = () => {
             </a>
             <a
               href="/contact"
-              className="text-[10px] tracking-[0.18em] uppercase font-medium text-(--cream) bg-(--red) px-4 py-2 lg:px-5.5 lg:py-2.25 hover:bg-(--red-dk) transition-colors duration-200 no-underline whitespace-nowrap"
+              className="text-[14px] tracking-[0.18em] uppercase font-medium text-(--cream) bg-(--red) px-6 py-2 lg:px-8 lg:py-4 hover:bg-(--red-dk) transition-colors duration-200 no-underline whitespace-nowrap"
             >
               Get Started
             </a>

@@ -13,7 +13,7 @@ export default function OriginalProgramming() {
         {/* ── Left Column (Header Section) ────────────────────────────────────────────── */}
         <div className="lg:col-span-6 xl:col-span-7 lg:sticky lg:top-36 min-w-0">
           {/* Eyebrow Label */}
-          <div className="flex items-center gap-3.5 text-[10px] md:text-[9px] tracking-[0.3em] uppercase text-(--red) font-normal mb-6 md:mb-8">
+          <div className="flex items-center gap-3.5 text-[10px] md:text-[12px] tracking-[0.3em] uppercase text-(--red) font-normal mb-6 md:mb-8">
             <span className="w-6 h-px bg-(--red) shrink-0" />
             Original Shows
           </div>

@@ -1,4 +1,5 @@
-import Contact from "@/component/Contact";
+import ContactPageComponent from "@/component/ContactPage";
+
 
 export const metadata = {
   title: "Contact | RAE Media Agency",
@@ -8,7 +9,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <div>
-      <Contact />
+      <ContactPageComponent />
     </div>
   );
 }
