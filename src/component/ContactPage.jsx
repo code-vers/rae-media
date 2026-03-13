@@ -3,7 +3,7 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 
-const Contact = () => {
+const ContactPageComponent = () => {
   const formRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -24,7 +24,8 @@ const Contact = () => {
           setIsLoading(false);
           setShowSuccess(true);
           formRef.current.reset();
-          
+
+          // Auto-hide success message after 5 seconds
           setTimeout(() => {
             setShowSuccess(false);
           }, 5000);
@@ -44,36 +45,40 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="grid grid-cols-1 py-20 max-w-7xl mx-auto lg:grid-cols-2 border-t border-(--border) "
+      className="grid grid-cols-1 max-w-7xl mx-auto lg:grid-cols-2 border-t border-(--border) min-h-[90vh] pt-28"
     >
       {/* ── Left Column ────────────────────────────────────────────────── */}
-      <div className="p-8 lg:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-(--border)">
+      <div className=" py-12 px-5 md:py-16 md:px-8 lg:py-22 lg:px-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-(--border)">
         <div>
-          <h2 className="[font-family:var(--serif)] text-[clamp(48px,12vw,110px)] lg:text-[clamp(52px,8vw,110px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase mb-8">
+          <div className="flex items-center text-(--red) gap-3.5 text-[10px] md:text-[12px] tracking-[0.3em] uppercase  font-normal mb-6 md:mb-8">
+            <span className="w-6 h-px bg-(--red) shrink-0" />
+            Get In Touch
+          </div>
+
+          <h2 className="[font-family:var(--serif)] text-[clamp(48px,12vw,110px)] lg:text-[clamp(52px,8vw,110px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase mt-4 md:mt-6 mb-8 lg:mb-0">
             Book
             <br />
             a
             <br />
             <em className="not-italic text-(--red)">call.</em>
           </h2>
-          
+
           {/* Book Now Button */}
           <button
             onClick={handleBookCall}
-            className="[font-family:var(--sans)] text-[11px] md:text-[10px] tracking-[0.22em] uppercase font-medium bg-(--red) text-(--cream) border-none py-4 md:py-3.75 px-8 md:px-10 transition-colors duration-200 cursor-pointer hover:bg-(--red-dk) w-full md:w-auto text-center"
+            className="[font-family:var(--sans)] text-[11px] md:text-[10px] tracking-[0.22em] uppercase font-medium bg-(--red) text-(--cream) border-none py-4 md:py-3.75 px-8 md:px-10 transition-colors duration-200 cursor-pointer hover:bg-(--red-dk) mt-8 lg:mt-12 w-full md:w-auto text-center"
           >
-            Book A Call →
+            Book Now →
           </button>
+        </div>
 
-          {/* Email - Now positioned right after button */}
-          <div className="[font-family:var(--body-serif)] text-[13px] md:text-xs leading-[2.1] text-(--ink-mid) font-normal mt-8">
-            <a
-              href="mailto:info@raemedia.io"
-              className="text-(--ink) no-underline hover:text-(--red) transition-colors duration-200"
-            >
-              Or email us at hi@raemedia.io
-            </a>
-          </div>
+        <div className="[font-family:var(--body-serif)] text-[13px] md:text-xs leading-[2.1] text-(--ink-mid) font-normal mt-8 lg:mt-0">
+          <a
+            href="mailto:info@raemedia.io"
+            className="text-(--ink) no-underline hover:text-(--red) transition-colors duration-200"
+          >
+            Or email us at hi@raemedia.io
+          </a>
         </div>
       </div>
 
@@ -81,17 +86,17 @@ const Contact = () => {
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className="p-8 lg:p-12  flex flex-col justify-center bg-(--cream) relative"
+        className="py-12 px-5 md:py-16 md:px-8 lg:py-22 lg:px-12 flex flex-col justify-center bg-(--cream) relative"
       >
         {/* Custom Success Message */}
         {showSuccess && (
-          <div className="absolute top-4 right-4 bg-(--red) text-(--cream) px-4 py-3 text-[11px] md:text-[10px] tracking-[0.1em] uppercase font-medium animate-fade-in">
+          <div className="absolute top-28 right-4 md:top-28 md:right-6 bg-(--red) text-(--cream) px-4 py-3 text-[11px] md:text-[10px] tracking-widset uppercase font-medium animate-fade-in">
             Message sent successfully ✓
           </div>
         )}
 
         {/* First + Last name row */}
-        <div className="flex  flex-col md:grid md:grid-cols-2 gap-0">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-0">
           <div>
             <input
               type="text"
@@ -147,18 +152,19 @@ const Contact = () => {
           name="message"
           placeholder="Tell us about your goals..."
           required
-          className="w-full bg-transparent border-0 border-b border-(--border) text-(--ink) py-4 [font-family:var(--sans)] text-[14px] md:text-[13px] font-light outline-none transition-colors duration-250 appearance-none resize-none h-24 placeholder:text-(--ink-lt) placeholder:text-[12px] md:placeholder:text-[11px] placeholder:tracking-[0.06em] focus:border-b-(--red)"
+          className="w-full bg-transparent border-0 border-b border-(--border) text-(--ink) py-4 md:py-6 [font-family:var(--sans)] text-[14px] md:text-[13px] font-light outline-none transition-colors duration-250 appearance-none resize-none h-24 md:h-22 placeholder:text-(--ink-lt) placeholder:text-[12px] md:placeholder:text-[11px] placeholder:tracking-[0.06em] focus:border-b-(--red)"
         />
 
         <button
           type="submit"
           disabled={isLoading}
-          className="[font-family:var(--sans)] text-[11px] md:text-[10px] tracking-[0.22em] uppercase font-medium bg-(--red) text-(--cream) border-none py-4 md:py-3.75 px-8 md:px-10 transition-colors duration-200 self-start mt-8 hover:bg-(--red-dk) cursor-pointer w-full md:w-auto text-center disabled:opacity-50 disabled:cursor-not-allowed"
+          className="[font-family:var(--sans)] text-[11px] md:text-[10px] tracking-[0.22em] uppercase font-medium bg-(--red) text-(--cream) border-none py-4 md:py-3.75 px-8 md:px-10 transition-colors duration-200 self-start mt-8 md:mt-6 hover:bg-(--red-dk) cursor-pointer w-full md:w-auto text-center disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isLoading ? "Sending..." : "Send Message →"}
         </button>
       </form>
 
+      {/* Add this style tag for the fade-in animation */}
       <style jsx>{`
         @keyframes fadeIn {
           from {
@@ -178,4 +184,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactPageComponent;

@@ -1,20 +1,22 @@
 import Image from "next/image";
+import image from '../../public/testomonial/image.jpeg';
+import image1 from '../../public/testomonial/image1.jpeg';
 
 export default function CreatorTestimonials() {
   const creatorTestimonials = [
     {
       quote:
-        "Since partnering with RAE, my channel revenue has tripled. They handle all the inbound so I can just focus on making videos.",
-      name: "Brandon Buckingham",
-      role: "1.26M Subscribers",
-      imgSrc: "/creators/creators.png",
+        "Sam is the ultimate hustler and determined to get the very best deals. He is always grinding – and at his core a respectful, amazing advocate who has his client’s best interest at heart",
+      name: " Brian Entin",
+      role: "Senior National Correspondent NewsNation",
+      imgSrc: image
     },
     {
       quote:
-        "The deals they bring are actually relevant to my audience. I've never felt like I had to compromise my content for a sponsorship.",
-      name: "The Iced Coffee Hour",
-      role: "1.55M Subscribers",
-      imgSrc: "/creators/creators1.png",
+        "I have known Sam Goldberg many years.  He is not a guy who is afraid to ask for the order.  Today that is a rare, but essential trai",
+      name: " Michael Smerconish",
+      role: "SiriusXM Host + TV Correspondent",
+      imgSrc:image1,
     },
     {
       quote:

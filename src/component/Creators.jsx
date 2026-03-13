@@ -135,7 +135,7 @@ export default function Creators() {
     >
       {/* ── Header ─────────────────────────────────────────────────────── */}
       <div className="px-5 pb-8 md:px-8 md:pb-10 lg:px-12 lg:pb-12">
-        <div className="text-[9px] tracking-[0.3em] uppercase text-(--ink-lt) [font-family:var(--sans)] flex items-center gap-3.5 mb-4">
+        <div className="text-[12px] tracking-[0.3em] uppercase text-(--ink-lt) [font-family:var(--sans)] flex items-center gap-3.5 mb-4">
           <span className="inline-block w-6 h-px bg-(--red) shrink-0" />
           Our Network
         </div>

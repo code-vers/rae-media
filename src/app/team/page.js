@@ -37,7 +37,7 @@ export default function Team() {
         {/* ── Header Section ────────────────────────────────────────────── */}
         <div className="mb-12 md:mb-16 lg:mb-20">
           {/* Eyebrow Label */}
-          <div className="flex items-center gap-3.5 text-[10px] md:text-[9px] tracking-[0.3em] uppercase text-(--red) font-normal mb-6 md:mb-8">
+          <div className="flex items-center gap-3.5 text-[10px] md:text-[12px] tracking-[0.3em] uppercase text-(--red) font-normal mb-6 md:mb-8">
             <span className="w-6 h-px bg-(--red) shrink-0" />
             ABOUT US
           </div>
