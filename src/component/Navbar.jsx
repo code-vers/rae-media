@@ -112,7 +112,7 @@ const Navbar = () => {
           {/* Hamburger Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex flex-col justify-center items-center gap-[5px] w-8 h-8 bg-transparent border-none cursor-pointer p-0"
+            className="flex flex-col justify-center items-center gap-1.25 w-8 h-8 bg-transparent border-none cursor-pointer p-0"
             aria-label="Toggle menu"
           >
             <span

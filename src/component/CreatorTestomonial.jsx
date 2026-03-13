@@ -28,7 +28,7 @@ export default function CreatorTestimonials() {
   ];
 
   return (
-    <section className="py-[88px] px-6 md:px-12 bg-(--ink) relative overflow-hidden border-t border-(--border)">
+    <section className="py-22 px-6 md:px-12 bg-(--ink) relative overflow-hidden border-t border-(--border)">
       {/* Background Pattern */}
       <div
         className="absolute inset-0 opacity-15 z-0"
@@ -40,15 +40,15 @@ export default function CreatorTestimonials() {
         }}
       />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto">
+      <div className="relative z-10 max-w-350 mx-auto">
         {/* Header */}
-        <div className="mb-16  max-w-[720px]">
+        <div className="mb-16  max-w-180">
           <div className="text-xs  tracking-[0.2em] uppercase text-(--red) font-semibold mb-4">
             Creator Testimonials
           </div>
 
           <h2 className="[font-family:var(--serif)] text-[clamp(40px,5vw,72px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-(--cream)">
-       HERE’S WHAT OUR 
+       HERE’S WHAT OUR
             <br />
             <span className="text-(--red) [font-family:var(--serif)]">
            CREATORS
@@ -62,7 +62,7 @@ export default function CreatorTestimonials() {
           {creatorTestimonials.map((t, idx) => (
             <div
               key={idx}
-              className="relative overflow-hidden rounded-[6px] aspect-3/4 group cursor-pointer"
+              className="relative overflow-hidden rounded-md aspect-3/4 group cursor-pointer"
             >
               {/* Image */}
               <Image

@@ -37,16 +37,16 @@ export default function OriginalProgramming() {
           {/* Show Card: Bodycam Blowups */}
           <a
             href="#" // Placeholder link
-            className="group block no-underline transition-all duration-300 transform hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] bg-white rounded-[16px] md:rounded-[20px] overflow-hidden border border-(--border)"
+            className="group block no-underline transition-all duration-300 transform hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] bg-white rounded-2xl md:rounded-[20px] overflow-hidden border border-(--border)"
           >
             {/* Image Container (Aspect Video) */}
             <div className="aspect-video bg-[rgba(26,23,20,0.03)] relative overflow-hidden flex items-center justify-center border-b border-(--border)">
               <div className="text-[10px] tracking-[0.2em] uppercase text-(--ink-lt) [font-family:var(--sans)] font-medium">
                 [ Placeholder Image ]
               </div>
-              {/* 
+              {/*
                   When ready, replace the placeholder text above with real Image:
-                  <Image src="/your-image.jpg" alt="Bodycam Blowups" fill className="object-cover transition-transform duration-700 group-hover:scale-105" unoptimized /> 
+                  <Image src="/your-image.jpg" alt="Bodycam Blowups" fill className="object-cover transition-transform duration-700 group-hover:scale-105" unoptimized />
                */}
             </div>
 
