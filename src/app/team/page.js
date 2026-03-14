@@ -48,11 +48,6 @@ export default function Team() {
             <br />
             <em className="not-italic text-(--red)">Team.</em>
           </h1>
-
-          {/* Description */}
-          <p className="[font-family:var(--body-serif)] text-[15px] md:text-[16px] leading-[1.8] md:leading-[1.9] text-(--ink-mid) font-normal max-w-2xl">
-            We are a team of dedicated strategists, managers, and coordinators committed to executing campaigns that actually work.
-          </p>
         </div>
 
         {/* ── Team Grid ────────────────────────────────────────── */}

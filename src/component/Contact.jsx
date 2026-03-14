@@ -24,7 +24,7 @@ const Contact = () => {
           setIsLoading(false);
           setShowSuccess(true);
           formRef.current.reset();
-          
+
           setTimeout(() => {
             setShowSuccess(false);
           }, 5000);
@@ -33,30 +33,33 @@ const Contact = () => {
           console.log(error);
           setIsLoading(false);
           alert("Failed to send message. Please try again.");
-        }
+        },
       );
   };
 
   const handleBookCall = () => {
-    window.open("https://cal.com/samgoldberg/call-w-sam?user=samgoldberg", "_blank");
+    window.open(
+      "https://cal.com/samgoldberg/call-w-sam?user=samgoldberg",
+      "_blank",
+    );
   };
 
   return (
     <section
       id="contact"
-      className="grid grid-cols-1 py-20 max-w-7xl mx-auto lg:grid-cols-2 border-t border-(--border) "
+      className="grid grid-cols-1 py-8 lg:py-20 max-w-7xl mx-auto lg:grid-cols-2 border-t border-(--border) "
     >
       {/* ── Left Column ────────────────────────────────────────────────── */}
       <div className="p-8 lg:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-(--border)">
         <div>
-          <h2 className="[font-family:var(--serif)] text-[clamp(48px,12vw,110px)] lg:text-[clamp(52px,8vw,110px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase mb-8">
-            Book
-            <br />
-            a
-            <br />
-            <em className="not-italic text-(--red)">call.</em>
+          <h2 className="[font-family:var(--serif)] text-[clamp(48px,12vw,110px)] lg:text-[clamp(52px,8vw,110px)] text-center md:text-start font-bold leading-[0.88] tracking-[-0.03em] uppercase mb-8">
+            GET{" "}
+            <br className="hidden md:block" />
+            IN{" "}
+            <br className="hidden md:block" />
+            <em className="not-italic text-(--red)">TOUCH.</em>
           </h2>
-          
+
           {/* Book Now Button */}
           <button
             onClick={handleBookCall}
@@ -66,7 +69,7 @@ const Contact = () => {
           </button>
 
           {/* Email - Now positioned right after button */}
-          <div className="[font-family:var(--body-serif)] text-[13px] md:text-xs leading-[2.1] text-(--ink-mid) font-normal mt-8">
+          <div className="[font-family:var(--body-serif)] text-[13px] md:text-xs text-center md:text-start leading-[2.1] text-(--ink-mid) font-normal mt-8">
             <a
               href="mailto:info@raemedia.io"
               className="text-(--ink) no-underline hover:text-(--red) transition-colors duration-200"
@@ -85,7 +88,7 @@ const Contact = () => {
       >
         {/* Custom Success Message */}
         {showSuccess && (
-          <div className="absolute top-4 right-4 bg-(--red) text-(--cream) px-4 py-3 text-[11px] md:text-[10px] tracking-[0.1em] uppercase font-medium animate-fade-in">
+          <div className="absolute top-4 right-4 bg-(--red) text-(--cream) px-4 py-3 text-[11px] md:text-[10px] tracking-widest uppercase font-medium animate-fade-in">
             Message sent successfully ✓
           </div>
         )}
