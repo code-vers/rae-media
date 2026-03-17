@@ -38,10 +38,11 @@ export default function BrandTestimonials() {
     >
 
       <div className="mb-8 md:mb-12 lg:mb-16">
-          <div className="flex items-center gap-3.5 text-[10px] md:text-[12px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal mb-6 md:mb-8">
-            <span className="w-6 h-px bg-(--red) shrink-0" />
-            Brand Testimonials
-          </div>
+           <div className="pt- px-5 pb-4 md:pt-10 md:px-8 md:pb-6 lg:pt-12 lg:px-12 lg:pb-8 flex items-center gap-3.5 text-[12px] tracking-[0.3em] uppercase text-(--ink-lt) font-normal">
+        <span className="inline-block w-6  h-px bg-(--red) shrink-0" />
+    Brand Testimonials
+      </div>
+
         <h2 className="[font-family:var(--serif)] text-[clamp(36px,6vw,72px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase text-(--ink) mt-2 md:mt-3">
           Here&apos;s what our
           <br />

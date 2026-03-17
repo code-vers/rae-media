@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import logo from "../../public/logo.png";
 
@@ -48,7 +49,7 @@ const Navbar = () => {
           }`}
         >
           {/* Logo */}
-          <a href="/" className="no-underline shrink-0 flex-none">
+          <Link href="/" className="no-underline shrink-0 flex-none">
             <Image
               src={logo}
               alt="RAE"
@@ -56,7 +57,7 @@ const Navbar = () => {
               width={250}
               className="h-11 w-auto block"
             />
-          </a>
+          </Link>
 
           {/* Center Text */}
           {/* <span className="flex-1  text-center text-[12px] tracking-[0.2em] xl:tracking-[0.3em] uppercase text-(--ink-lt) font-normal whitespace-nowrap overflow-hidden text-ellipsis px-2 lg:px-4">
@@ -65,30 +66,30 @@ const Navbar = () => {
 
           {/* Navigation */}
           <nav className="flex items-center justify-end gap-5 lg:gap-9 shrink-0 flex-none">
-            <a
+            <Link
               href="/contact"
               className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200 whitespace-nowrap"
             >
               Contact
-            </a>
-            <a
+            </Link>
+            <Link
               href="/team"
               className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200 whitespace-nowrap"
             >
               Team
-            </a>
-            <a
+            </Link>
+            <Link
               href="/original-programming"
               className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200 whitespace-nowrap"
             >
               Original Programming
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="text-[14px] tracking-[0.18em] uppercase font-medium text-(--cream) bg-(--red) px-6 py-2 lg:px-8 lg:py-4 hover:bg-(--red-dk) transition-colors duration-200 no-underline whitespace-nowrap"
             >
               Get Started
-            </a>
+            </Link>
           </nav>
         </div>
 

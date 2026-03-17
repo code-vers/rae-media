@@ -14,14 +14,14 @@ const Banner = () => {
       {/* Subcopy */}
       <p className="[font-family:var(--body-serif)] text-[18px] md:text-[20px] leading-[1.7] text-(--ink-mid) font-normal max-w-[620px] mb-10">
         We match brands with Youtube’s top converting talent to execute
-        campaigns that actually work
+        campaigns that actually work.
       </p>
 
       {/* CTA */}
       <div className="flex gap-4 flex-wrap">
         <a
-          href="#brands-say"
-          className="[font-family:var(--sans)] text-[13px] uppercase tracking-[0.04em] font-semibold py-3 px-4 md:py-4.5 md:px-12 text-center no-underline inline-block transition-all duration-280 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-none md:rounded-[60px] border-2 border-(--red) bg-(--red) text-(--cream) hover:bg-(--red-dk) hover:border-(--red-dk) hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(232,33,90,0.35)]"
+          href="#contact"
+          className="[font-family:var(--sans)] text-[13px] uppercase tracking-[0.04em] font-semibold py-3 px-4 md:py-4.5 md:px-12 text-center no-underline inline-block transition-all duration-280 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-none  border-2 border-(--red) bg-(--red) text-(--cream) hover:bg-(--red-dk) hover:border-(--red-dk) hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(232,33,90,0.35)]"
         >
           BOOK A CALL
         </a>

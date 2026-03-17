@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import logo from '../../public/logo.png';
 
 const Footer = () => {
@@ -11,12 +12,35 @@ const Footer = () => {
       </a>
 
       {/* Nav Links */}
-      <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 md:gap-9">
-        <a href="#" className="text-[9px] tracking-[0.2em] uppercase text-(--ink-lt) no-underline font-normal hover:text-(--red) transition-colors duration-200">Brands</a>
-        <a href="#" className="text-[9px] tracking-[0.2em] uppercase text-(--ink-lt) no-underline font-normal hover:text-(--red) transition-colors duration-200">Creators</a>
-        <a href="#" className="text-[9px] tracking-[0.2em] uppercase text-(--ink-lt) no-underline font-normal hover:text-(--red) transition-colors duration-200">About</a>
-        <a href="#contact" className="text-[9px] tracking-[0.2em] uppercase text-(--ink-lt) no-underline font-normal hover:text-(--red) transition-colors duration-200">Contact</a>
-      </div>
+<div className="flex flex-wrap justify-center gap-x-6 gap-y-3 md:gap-9">
+  <Link
+    href="#"
+    className="text-[12px] tracking-[0.2em] uppercase text-(--ink-lt) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+  >
+    Brands
+  </Link>
+
+  <Link
+    href="#"
+    className="text-[12px] tracking-[0.2em] uppercase text-(--ink-lt) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+  >
+    Creators
+  </Link>
+
+  <Link
+    href="/team"
+    className="text-[12px] tracking-[0.2em] uppercase text-(--ink-lt) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+  >
+    Team
+  </Link>
+
+  <Link
+    href="#contact"
+    className="text-[12px] tracking-[0.2em] uppercase text-(--ink-lt) no-underline font-normal hover:text-(--red) transition-colors duration-200"
+  >
+    Contact
+  </Link>
+</div>
 
       {/* Copyright */}
       <div className="text-[10px] tracking-[0.08em] text-(--ink-lt) font-normal md:text-right">
