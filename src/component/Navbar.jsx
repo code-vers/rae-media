@@ -55,7 +55,7 @@ const Navbar = () => {
               alt="RAE"
               height={250}
               width={250}
-              className="h-12 w-auto block"
+              className="h-11 w-auto block"
             />
           </Link>
 

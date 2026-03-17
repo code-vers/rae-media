@@ -64,7 +64,7 @@ export default function BrandTestimonials() {
 
             <div className="flex items-center gap-3 md:gap-4">
               <div
-                className={`w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center shrink-0 relative overflow-hidden ${
+                className={`w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center shrink-0 relative overflow-hidden ${
                   t.avatarColor === "red"
                     ? "bg-(--red) text-(--cream)"
                     : "bg-(--sand-3) text-(--ink)"
