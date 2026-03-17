@@ -60,7 +60,7 @@ const Contact = () => {
           {/* Book Now Button */}
           <button
             onClick={handleBookCall}
-            className="[font-family:var(--sans)] text-[11px] md:text-[10px] tracking-[0.22em] uppercase font-medium bg-(--red) text-(--cream) border-none py-4 md:py-3.75 px-8 md:px-10 transition-colors duration-200 cursor-pointer hover:bg-(--red-dk) w-full md:w-auto text-center"
+            className="[font-family:var(--sans)] text-[11px] md:text-[10px] tracking-[0.22em] uppercase font-medium bg-(--red) text-(--cream) border-none py-4 mt-[67px] md:py-3.75 px-8 md:px-10 transition-colors duration-200 cursor-pointer hover:bg-(--red-dk) w-full md:w-auto text-center"
           >
             Book A Call →
           </button>
