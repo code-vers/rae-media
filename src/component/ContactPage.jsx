@@ -45,10 +45,10 @@ const ContactPageComponent = () => {
   return (
     <section
       id="contact"
-      className="grid grid-cols-1 max-w-7xl mx-auto lg:grid-cols-2 border-t border-(--border) md:min-h-[90vh] pt-12 md:pt-28"
+      className="grid grid-cols-1 max-w-7xl mx-auto lg:grid-cols-2 border-t border-(--border) min-h-[90vh] pt-28"
     >
       {/* ── Left Column ────────────────────────────────────────────────── */}
-      <div className="hidden md:flex py-12 px-4 md:py-16 md:px-5 lg:py-20 lg:px-6  flex-col justify-between border-b lg:border-b-0 lg:border-r border-(--border)">
+      <div className=" py-12 px-5 md:py-16 md:px-8 lg:py-22 lg:px-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-(--border)">
         <div>
           <div className="flex items-center text-(--red) gap-3.5 text-[10px] md:text-[12px] tracking-[0.3em] uppercase  font-normal mb-6 md:mb-8">
             <span className="w-6 h-px bg-(--red) shrink-0" />
@@ -66,16 +66,16 @@ const ContactPageComponent = () => {
           {/* Book Now Button */}
           <button
             onClick={handleBookCall}
-            className="[font-family:var(--sans)] text-[11px] md:text-[10px] tracking-[0.22em] uppercase font-medium bg-(--red) text-(--cream) border-none py-4 md:py-3.75 px-8 md:px-10 transition-colors duration-200 cursor-pointer hover:bg-(--red-dk) mt-8 lg:mt-12 w-full md:w-auto text-center"
+            className="[font-family:var(--sans)] text-[11px] md:text-[10px] tracking-[0.22em] uppercase font-medium bg-(--red) text-(--cream) border-none py-4 md:py-3.75 px-8 md:px-10 transition-colors duration-200 cursor-pointer hover:bg-(--red-dk) mt-8 lg:mt-[79px] w-full md:w-auto text-center"
           >
             Book Now →
           </button>
         </div>
 
-        <div className="[font-family:var(--body-serif)] text-[13px] md:text-xs leading-[2.1] text-(--ink-mid) font-normal mt-8">
+        <div className="[font-family:var(--body-serif)] text-[13px] md:text-xs leading-[2.1] text-(--ink-mid) font-normal mt-8 lg:mt-0">
           <a
             href="mailto:info@raemedia.io"
-            className="text-(--ink) no-underline hover:text-(--red) transition-colors duration-200"
+            className="text-(--ink) hidden md:block no-underline hover:text-(--red) transition-colors duration-200"
           >
             Or email us at hi@raemedia.io
           </a>
@@ -86,7 +86,7 @@ const ContactPageComponent = () => {
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className="py-12 px-4 md:py-16 md:px-5 lg:py-20 lg:px-6 flex flex-col justify-center bg-(--cream) relative"
+        className="py-12 px-5 md:py-16 md:px-8 lg:py-22 lg:px-12 flex flex-col justify-center bg-(--cream) relative"
       >
         {/* Custom Success Message */}
         {showSuccess && (
@@ -162,15 +162,12 @@ const ContactPageComponent = () => {
         >
           {isLoading ? "Sending..." : "Send Message →"}
         </button>
-
-        <div className="[font-family:var(--body-serif)] text-[13px] md:text-xs leading-[2.1] text-(--ink-mid) font-normal mt-8 md:hidden text-center">
           <a
-            href="mailto:info@raemedia.io"
-            className="text-[#6a80ff] no-underline hover:text-(--red) transition-colors duration-200"
-          >
-            Or email us at hi@raemedia.io
-          </a>
-        </div>
+              href="mailto:info@raemedia.io"
+              className="text-(--ink) mt-12 md:hidden text-center no-underline hover:text-(--red) transition-colors duration-200"
+            >
+              Or email us at hi@raemedia.io
+            </a>
       </form>
 
       {/* Add this style tag for the fade-in animation */}

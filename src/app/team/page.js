@@ -51,10 +51,10 @@ export default function Team() {
 
           {/* Description + Subcopy */}
           <p className="[font-family:var(--body-serif)] text-[15px] md:text-[16px] leading-[1.8] md:leading-[1.9] text-(--ink-mid) font-normal max-w-2xl space-y-4">
-            <span>
+            {/* <span>
               We are a team of dedicated strategists, managers, and coordinators
               committed to executing campaigns that actually work.
-            </span>
+            </span> */}
 
             <span className="block">
               Founded in 2026 by husband and wife — Sam with a background in
