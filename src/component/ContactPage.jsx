@@ -66,7 +66,7 @@ const ContactPageComponent = () => {
           {/* Book Now Button */}
           <button
             onClick={handleBookCall}
-            className="[font-family:var(--sans)] text-[11px] md:text-[10px] tracking-[0.22em] uppercase font-medium bg-(--red) text-(--cream) border-none py-4 md:py-3.75 px-8 md:px-10 transition-colors duration-200 cursor-pointer hover:bg-(--red-dk) mt-8 lg:mt-12 w-full md:w-auto text-center"
+            className="[font-family:var(--sans)] text-[11px] md:text-[10px] tracking-[0.22em] uppercase font-medium bg-(--red) text-(--cream) border-none py-4 md:py-3.75 px-8 md:px-10 transition-colors duration-200 cursor-pointer hover:bg-(--red-dk) mt-8 lg:mt-[79px] w-full md:w-auto text-center"
           >
             Book Now →
           </button>
@@ -75,7 +75,7 @@ const ContactPageComponent = () => {
         <div className="[font-family:var(--body-serif)] text-[13px] md:text-xs leading-[2.1] text-(--ink-mid) font-normal mt-8 lg:mt-0">
           <a
             href="mailto:info@raemedia.io"
-            className="text-(--ink) no-underline hover:text-(--red) transition-colors duration-200"
+            className="text-(--ink) hidden md:block no-underline hover:text-(--red) transition-colors duration-200"
           >
             Or email us at hi@raemedia.io
           </a>
@@ -162,6 +162,12 @@ const ContactPageComponent = () => {
         >
           {isLoading ? "Sending..." : "Send Message →"}
         </button>
+          <a
+              href="mailto:info@raemedia.io"
+              className="text-(--ink) mt-12 md:hidden text-center no-underline hover:text-(--red) transition-colors duration-200"
+            >
+              Or email us at hi@raemedia.io
+            </a>
       </form>
 
       {/* Add this style tag for the fade-in animation */}

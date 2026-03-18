@@ -49,6 +49,10 @@ const Contact = () => {
       {/* ── Left Column ────────────────────────────────────────────────── */}
       <div className="p-8 lg:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-(--border)">
         <div>
+              <div className="flex items-center text-(--red) gap-3.5 text-[10px] md:text-[12px] tracking-[0.3em] uppercase  font-normal mb-6 md:mb-8">
+            <span className="w-6 h-px bg-(--red) shrink-0" />
+          Contact Us
+          </div>
           <h2 className="[font-family:var(--serif)] text-[clamp(48px,12vw,110px)] lg:text-[clamp(52px,8vw,110px)] font-bold leading-[0.88] tracking-[-0.03em] uppercase mb-8">
             Book
             <br />
@@ -69,7 +73,7 @@ const Contact = () => {
           <div className="[font-family:var(--body-serif)] text-[13px] md:text-xs leading-[2.1] text-(--ink-mid) font-normal mt-8">
             <a
               href="mailto:info@raemedia.io"
-              className="text-(--ink) no-underline hover:text-(--red) transition-colors duration-200"
+              className="text-(--ink) hidden md:block no-underline hover:text-(--red) transition-colors duration-200"
             >
               Or email us at hi@raemedia.io
             </a>
@@ -157,6 +161,12 @@ const Contact = () => {
         >
           {isLoading ? "Sending..." : "Send Message →"}
         </button>
+          <a
+              href="mailto:info@raemedia.io"
+              className="text-(--ink) mt-12 md:hidden text-center no-underline hover:text-(--red) transition-colors duration-200"
+            >
+              Or email us at hi@raemedia.io
+            </a>
       </form>
 
       <style jsx>{`
