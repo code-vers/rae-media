@@ -1,6 +1,6 @@
 import Image from "next/image";
-import image from '../../public/testomonial/image.jpeg';
-import image1 from '../../public/testomonial/image1.jpeg';
+import image from '../../public/testomonial/image.jpeg';;
+import image2 from '../../public/creators/creator2.jpeg';
 
 export default function CreatorTestimonials() {
   const creatorTestimonials = [
@@ -16,7 +16,7 @@ export default function CreatorTestimonials() {
         "I have known Sam Goldberg many years.  He is not a guy who is afraid to ask for the order.  Today that is a rare, but essential trai",
       name: " Michael Smerconish",
       role: "SiriusXM Host + TV Correspondent",
-      imgSrc:image1,
+      imgSrc:image2,
     },
     {
       quote:

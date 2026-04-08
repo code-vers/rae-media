@@ -68,6 +68,7 @@ const BRAND_LOGOS = [
   { src: "/brands/Upside.avif", alt: "Upside" },
   { src: "/brands/Vanman.avif", alt: "Vanman" },
   { src: "/brands/Wildgrain.png", alt: "Wildgrain" },
+  { src: "/brands/Warby_Parker.png", alt: "Warby Parker" },
   { src: "/brands/Zocdoc.png", alt: "Zocdoc" },
   {
     src: "/brands/death-breath-metal-band-logo-logo-icon-png-svg.png",

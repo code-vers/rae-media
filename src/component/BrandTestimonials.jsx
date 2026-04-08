@@ -1,15 +1,15 @@
 import Image from "next/image";
-import image from '../../public/testomonial/image.jpeg';
+import image from '../../public/brandSays/brandC1.jpeg';
 import image1 from '../../public/testomonial/image1.jpeg';
 
 export default function BrandTestimonials() {
   const testimonials = [
     {
       quote:
-        "Sam is the ultimate hustler and determined to get the very best deals. He is always grinding – and at his core a respectful, amazing advocate who has his client’s best interest at heart",
+        "No one I've ever worked with in the podcasting business works as hard as Sam and the RAE Media team. They constantly deliver amazing opportunities for our brands, and are a pleasure to work with in anyway.",
       initials: "IF",
-      name: "Brian Entin",
-      role: "Senior National Correspondent NewsNation",
+      name: "Ilyas Frenkel",
+      role: "Founder Single Source Media",
       avatarColor: "red",
       image:image
     },

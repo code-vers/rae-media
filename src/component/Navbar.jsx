@@ -11,19 +11,19 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 60;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
+      setScrolled((prev) => {
+        if (prev === isScrolled) return prev;
+        return isScrolled;
+      });
+
+      if (isScrolled) {
+        setMenuOpen((prev) => (prev ? false : prev));
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrolled]);
-
-  // Close menu on scroll
-  useEffect(() => {
-    if (scrolled && menuOpen) setMenuOpen(false);
-  }, [scrolled]);
+  }, []);
 
   const handleLinkClick = () => setMenuOpen(false);
 
@@ -78,12 +78,12 @@ const Navbar = () => {
             >
               Team
             </Link>
-            <Link
+            {/* <Link
               href="/original-programming"
               className="text-[12px] tracking-[0.18em] uppercase text-(--ink-mid) no-underline font-normal hover:text-(--red) transition-colors duration-200 whitespace-nowrap"
             >
               Original Programming
-            </Link>
+            </Link> */}
             <Link
               href="/contact"
               className="text-[14px] tracking-[0.18em] uppercase font-medium text-(--cream) bg-(--red) px-6 py-2 lg:px-8 lg:py-4 hover:bg-(--red-dk) transition-colors duration-200 no-underline whitespace-nowrap"
@@ -157,7 +157,7 @@ const Navbar = () => {
               { href: "/", label: "Home" },
               { href: "/contact", label: "Contact" },
               { href: "/team", label: "Team" },
-              { href: "/original-programming", label: "Original Programming" },
+              // { href: "/original-programming", label: "Original Programming" },
             ].map((item) => (
               <a
                 key={item.href}
